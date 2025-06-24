@@ -1,15 +1,18 @@
-from app.agents.input_interpreter import InputInterpreterAgent
-from app.agents.profile_builder import ProfileBuilderAgent
-from app.agents.plan_matcher import PlanMatcherAgent
-from app.agents.scorer import ScoringAgent
-from app.agents.explanation import ExplanationAgent
-#import json
+from agents.input_interpreter import InputInterpreterAgent
+from agents.profile_builder import ProfileBuilderAgent
+from agents.plan_matcher import PlanMatcherAgent
+from agents.scorer import ScoringAgent
+from agents.explanation import ExplanationAgent
+import json
+
+with open("data/plans.json") as f:
+    PLAN_DATA = json.load(f)
 
 class OrchestratorAgent:
     def __init__(self):
         self.input_agent = InputInterpreterAgent()
         self.profile_agent = ProfileBuilderAgent()
-        self.matcher = PlanMatcherAgent()
+        self.matcher = PlanMatcherAgent(PLAN_DATA)
         self.scorer = ScoringAgent()
         self.explainer = ExplanationAgent()
 
