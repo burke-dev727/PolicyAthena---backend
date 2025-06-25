@@ -1,0 +1,15 @@
+[
+    {
+      "plan_id": "basic_1",
+      "name": "Basic Plan",
+      "features": ["feature_a", "feature_b"],
+      "price": 10
+    },
+    {
+      "plan_id": "premium_1",
+      "name": "Premium Plan",
+      "features": ["feature_a", "feature_b", "feature_c"],
+      "price": 20
+    }
+  ]
+  
