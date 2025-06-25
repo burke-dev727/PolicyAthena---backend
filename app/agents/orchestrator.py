@@ -4,23 +4,31 @@ from app.agents.plan_matcher import PlanMatcherAgent
 from app.agents.scorer import ScoringAgent
 from app.agents.explanation import ExplanationAgent
 
-from app.agents.input_interpreter import InputInterpreterAgent
-from app.agents.profile_builder import ProfileBuilderAgent
-from app.agents.plan_matcher import PlanMatcherAgent
-from app.agents.scorer import ScoringAgent
-from app.agents.explanation import ExplanationAgent
+import json
+import os
+
+# Sample hardcoded plan data
+PLAN_DATA = [
+    {
+        "plan_id": "basic_1",
+        "name": "Basic Plan",
+        "features": ["feature_a", "feature_b"],
+        "price": 10
+    },
+    {
+        "plan_id": "premium_1",
+        "name": "Premium Plan",
+        "features": ["feature_a", "feature_b", "feature_c"],
+        "price": 20
+    }
+]
+
 
 class OrchestratorAgent:
     def __init__(self):
         self.input_agent = InputInterpreterAgent()
         self.profile_agent = ProfileBuilderAgent()
-
-        mock_plans = [
-            {"plan_id": "basic", "name": "Basic Plan"},
-            {"plan_id": "premium", "name": "Premium Plan"},
-            {"plan_id": "gold", "name": "Gold Plan"}
-        ]
-        self.matcher = PlanMatcherAgent(mock_plans)
+        self.matcher = PlanMatcherAgent(PLAN_DATA)
         self.scorer = ScoringAgent()
         self.explainer = ExplanationAgent()
 
