@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Request
 from pydantic import BaseModel
-
+from input_interpreter import user_data
 router = APIRouter()
 
-class InputData(BaseModel):
-    name: str
-    age: int
-    zip_code: str
+class InputData(user_data):
+    name: user_data[0]
+    age: user_data[1]
+    zip_code: user_data[2]
 
 @router.post("/input")
 async def process_input(data: InputData):
