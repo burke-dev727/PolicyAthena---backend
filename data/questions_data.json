@@ -1,0 +1,54 @@
+{
+    "personal_info": {
+        "first_name": "",
+        "last_name": "",
+        "age": 0,
+        "ssn": "",
+        "email": "",
+        "phone": "",
+        "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "zip_code": ""
+        }
+    },
+    "current_insurance": {
+        "has_insurance": false,
+        "provider_name": "",
+        "policy_number": "",
+        "coverage_start_date": "",
+        "coverage_end_date": "",
+        "source": ""  
+  },
+    "employment_info": {
+        "is_employed": false,
+        "employer_name": "",
+        "employer_offers_insurance": false,
+        "annual_income": 0,
+        "household_size": 0
+  },
+    "coverage_needs": {
+        "coverage_type": "", 
+        "preferred_providers": [ "", ""],
+        "preexisting_conditions": ["", ""],
+        "current_prescriptions": ["", ""],
+        "coverage_level": "",  
+        "monthly_budget": 0
+  },
+    "eligibility_info": {
+        "is_us_citizen": false,
+        "eligible_for_medicaid": false,
+        "eligible_for_medicare": false,
+        "recent_life_event": {
+        "event": "",  
+        "event_date": ""},
+        "is_student": false,
+        "is_veteran": false
+  },
+    "documents": {
+        "insurance_card_url": "",
+        "proof_of_income_url": ""
+  }
+
+}
