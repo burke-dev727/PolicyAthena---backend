@@ -1,0 +1,52 @@
+  {
+    "personal_info": {
+        "first_name": "Jeff",
+        "last_name": "Barrel",
+        "age": 72,
+        "ssn": "822-78-1111",
+        "email": "random@gmail.com",
+        "phone": "999-713-9143",
+        "address": "6534",
+        "street": "SaintsRow",
+        "city": "San Andreas",
+        "state": "California",
+        "zip_code": "40886"
+      },
+
+    "current_insurance": {
+        "has_insurance": true,
+        "provider_name": "Umbrella Cross Blue Shield",
+        "policy_number": "BC123456789",
+        "coverage_start_date": "03-22-1996",
+        "coverage_end_date": "02-27-2026",
+        "source": "employer, martketplace, private, government, or other"
+  },
+    "employment_info": {
+        "is_employed": true,
+        "employer_name": "Brotherhood of Steel",
+        "employer_offers_insurance": false,
+        "annual_income": 62020,
+        "household_size": 3
+  },
+    "coverage_needs": {
+        "coverage_type": "family or individual", 
+        "preferred_providers": ["Quahog General Hospital", "Walter White"],
+        "preexisting_conditions": ["diabetes", "hypertension"],
+        "current_prescriptions": ["lisinopril", "metformin"],
+        "coverage_level": "bronze, silver, gold, or platinum",  
+        "monthly_budget": 1000
+  },
+    "eligibility_info": {
+        "is_us_citizen": false,
+        "eligible_for_medicaid": false,
+        "eligible_for_medicare": false,
+        "recent_life_event": ["Wedding,09-29-2013", "Irish Testibg,04-14-2025"],
+        "is_student": false,
+        "is_veteran": false
+  },
+    "documents": {
+        "insurance_card_url": "https://example.com/documents/card.jpg",
+        "proof_of_income_url": "https://example.com/documents/income.pdf"
+  }
+
+}
