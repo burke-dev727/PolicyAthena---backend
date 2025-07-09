@@ -1,6 +1,7 @@
-# Author: James Zheng
+# Edited: James Zheng
 # Updated: 6/3/2025
 # Notes: User inputs their data here and transmitts it back to input_route
+# Seperate each Info into chunks, commit code common code, 
 class InputInterpreterAgent:
     # Personal Info
     def get_user_name():
@@ -172,13 +173,14 @@ class InputInterpreterAgent:
     user_insurance = get_user_insurance()
     user_proofOfIncome = get_user_proofOfIncome()
     
+    
     # Place variabels into a list
-    user_personalInfo = [] 
-    user_currentInsurance = []
-    user_employmentInfo = []
-    user_coverageNeeds = []
-    user_eligibilityInfo = []
-    user_documents = []
+    user_personalInfo = [name, age, email, phone, address, street, city, state, zip_code, ssn] # 10
+    user_currentInsurance = [has_insurance, provider_name, policy_number, coverage_start, coverage_end, source] # 6
+    user_employmentInfo = [is_employed, employer_name, employer_offers, annual_income, household_size] # 5
+    user_coverageNeeds = [coverage_type, providers_list, existing_condtitions_list, current_perscription_list, coverage_level, monthly_budget] # 6
+    user_eligibilityInfo = [is_UScitizen, is_medicaid, is_medicare, recentEvents_2DList, is_student, is_veteran] # 6
+    user_documents = [user_insurance, user_proofOfIncome] # 2
 
     def run(self, raw_input: dict) -> dict:
         return raw_input
