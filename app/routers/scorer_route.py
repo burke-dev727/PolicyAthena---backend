@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Dict
 
-router = APIRouter()
+router = APIRouter(prefix="/planScorer", tags=["planScorer"])
 
 class PlanData(BaseModel):
     plan_id: str

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request
 from pydantic import BaseModel
 
-router = APIRouter()
+router = APIRouter(prefix="/userInput", tags=["userInput"])
 
 class InputData(BaseModel):
     name: str

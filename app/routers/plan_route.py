@@ -2,7 +2,7 @@ import os
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from app.agents.plan_builder import PlanBuilderAgent
 
-router = APIRouter()
+router = APIRouter(prefix="/planBuilder", tags=["planBuilder"])
 UPLOAD_TEMP = "temp_uploads"
 os.makedirs(UPLOAD_TEMP, exist_ok=True)
 agent = PlanBuilderAgent()

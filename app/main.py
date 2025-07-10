@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.routers import (
+    user_route,
     input_route,
     plan_route,
     matcher_route,
@@ -11,6 +12,7 @@ from app.routers import (
 app = FastAPI(title="PolicyAthena Backend")
 
 # Include each agent's router
+app.include_router(user_route.router)
 app.include_router(input_route.router)
 app.include_router(plan_route.router)
 app.include_router(matcher_route.router)

@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List
 
-router = APIRouter()
+router = APIRouter(prefix="/policyMatcher", tags=["policyMatchere"])
 
 class ProfileData(BaseModel):
     age: int
