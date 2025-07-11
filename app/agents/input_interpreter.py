@@ -1,3 +1,4 @@
+import re
 # Author: James Zheng
 # Edited: 6/20/2025
 # Updated 7/9/2025
@@ -8,42 +9,73 @@ class PersonalInfo:
     # Get First and last name
     def get_user_name():
         while True:
-            name = input("Enter your first and last name: ").strip()
+            name = input("Enter your first and last name (e.g. 'Bob Joe'): ").strip()
             if name and all(a.isalpha() or a == " " for a in name):
                 return name
-            print("Invalid name - use letter and spaces only (e.g. 'Bob Joe'). Please try again.")
+            print("Invalid name. Please try again.")
         
     # Get age in integer
     def get_user_age():
-        return int(input("Enter your age: "))
+        while True:
+            age = input("Enter your age: ")
+            if age.isdigit():
+                return age
+            else:
+                print("Invalid age. Please enter with numbers and try again.")
     
     # Get email
     def get_user_email():
-        return input("Enter your email: ")
+        while True:
+            email = input("Enter your email: ")
+            if email.isdigit():
+                print("Invalid email. Please try again.")
+            else:
+                return email
     
     # Get phone number
     def get_user_phone():
-        return input("Enter your phone number: ")
+        phone_check = re.compile(r'^(\d{10}|\d{3}-\d{3}-\d{4})$')
+        while True:
+            phone = input("Enter your phone number: ")
+            if phone_check.match(phone) and phone.isdigit:
+                return phone
+            else:
+                print("Invalid phone number. Please try again.")
     
-    # Get address number and street name in that order
+    # Get address number and street name in that order, needs fixing for while loop
     def get_user_home(): 
-        full_input = input("Enter your address (e.g., '123, Main Street'): ")
-        address_num, street_name = full_input.split(' ', 1) 
-        return address_num, street_name
+        while True:
+            # home_check = re.compile(r'^\d+\s+\w+(\s+\w+)+$')
+            full_input = input("Enter your address (e.g., '123, Main Street'): ").strip()
+            address_num, street_name = full_input.split(' ', 1) 
+            return address_num, street_name
     
-    # Get city and state name
+    # Get city and state name, needs fixing for while loop
     def get_user_location(): 
-        full_input = input("Enter your city and state (e.g., 'Plano, Texas'): ")
-        city_name, state_name = full_input.split(' ', 1)
-        return city_name, state_name
+        while True:
+            full_input = input("Enter your city and state (e.g., 'Plano, Texas'): ")
+            city_name, state_name = full_input.split(' ', 1)
+            return city_name, state_name
     
     # Gte zipcode
     def get_user_zipcode():
-        return input("Enter your zipcode: ")
+        while True:
+            zipcode_check = re.compile(r'^(\d{5})')
+            zipcode = input("Enter your zipcode (e.g. 50234): ")
+            if zipcode_check.match(zipcode) and zipcode.isdigit:
+                return zipcode
+            else:
+                print("Invalid zipcode. Please try again.")
     
     # Get Social Security Number
     def get_user_ssn():
-        return input("Enter your Social Security Number: ")
+        while True:
+            ssn_check = re.compile(r'^(\d{9}|\d{3}-\d{2}-\d{4})$')
+            ssn = input("Enter your Social Security Number: ")
+            if ssn_check.match(ssn) and ssn.isdigit:
+                return ssn
+            else:
+                print("Invalid Social Security Number. Pleas etry again.")
     
     # Direct input to variables
     name = get_user_name()
@@ -62,9 +94,14 @@ class PersonalInfo:
 class CurrentInsurance:
     # Get if user has insurance or not
     def is_user_insurance():
-        return input("Do you have health insurance (Y/N): ")
+        while True:
+            insurance = input("Do you have health insurance (Y/N): ")
+            if insurance == "Y".upper() or insurance == "N".upper:
+                return insurance
+            else:
+                print("Invalid answer. Please try again.")
     
-    # Get provider's name or the company that has insurance
+    # Get provider's name or the company that has insurance (IN PROGRESS)
     def get_user_provider():
         return input("Enter your provider's name: ")
     
@@ -234,7 +271,7 @@ class Documents:
     
     # Places docuemnt data into list
     list_documents = [user_insurance, user_proofOfIncome] # 2
-    
+
 class InputInterpreterAgent:
     def run(self, raw_input: dict) -> dict:
         return raw_input
