@@ -1,5 +1,5 @@
-# Edited: James Zheng
-# Created: 6/20/2025
+# Author: James Zheng
+# Edited: 6/20/2025
 # Updated 7/9/2025
 # Notes: User inputs their data here and transmitts it back to input_route
 
@@ -235,5 +235,6 @@ class Documents:
     # Places docuemnt data into list
     list_documents = [user_insurance, user_proofOfIncome] # 2
 
+class InputInterpreterAgent:
     def run(self, raw_input: dict) -> dict:
         return raw_input
