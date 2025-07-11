@@ -1,49 +1,84 @@
+import re
 # Author: James Zheng
 # Edited: 6/20/2025
-# Updated 7/9/2025
+# Updated 7/11/2025
 # Notes: User inputs their data here and transmitts it back to input_route
+
+# Variable to display when the input is incorrect
+error = "Invalid input. Please try Again."
 
 # Personal Info
 class PersonalInfo:
     # Get First and last name
     def get_user_name():
         while True:
-            name = input("Enter your first and last name: ").strip()
+            name = input("Enter your first and last name (e.g. 'Bob Joe'): ").strip()
             if name and all(a.isalpha() or a == " " for a in name):
                 return name
-            print("Invalid name - use letter and spaces only (e.g. 'Bob Joe'). Please try again.")
+            print(error)
         
     # Get age in integer
     def get_user_age():
-        return int(input("Enter your age: "))
+        while True:
+            age = input("Enter your age (e.g. 21): ")
+            if age.isdigit():
+                return age
+            else:
+                print(error)
     
     # Get email
     def get_user_email():
-        return input("Enter your email: ")
+        while True:
+            email = input("Enter your email (e.g. thisguy@gmail.com): ")
+            if email.isdigit():
+                print(error)
+            else:
+                return email
     
     # Get phone number
     def get_user_phone():
-        return input("Enter your phone number: ")
+        phone_check = re.compile(r'^(\d{10}|\d{3}-\d{3}-\d{4})$')
+        while True:
+            phone = input("Enter your phone number (e.g. 123-456-7890): ")
+            if phone_check.match(phone) and phone.isdigit:
+                return phone
+            else:
+                print(error)
     
-    # Get address number and street name in that order
+    # Get address number and street name in that order, needs fixing for while loop
     def get_user_home(): 
-        full_input = input("Enter your address (e.g., '123, Main Street'): ")
-        address_num, street_name = full_input.split(' ', 1) 
-        return address_num, street_name
+        while True:
+            # home_check = re.compile(r'^\d+\s+\w+(\s+\w+)+$')
+            full_input = input("Enter your address (e.g., '123, Main Street'): ").strip()
+            address_num, street_name = full_input.split(' ', 1) 
+            return address_num, street_name
     
-    # Get city and state name
+    # Get city and state name, needs fixing for while loop
     def get_user_location(): 
-        full_input = input("Enter your city and state (e.g., 'Plano, Texas'): ")
-        city_name, state_name = full_input.split(' ', 1)
-        return city_name, state_name
+        while True:
+            full_input = input("Enter your city and state (e.g., 'Plano, Texas'): ")
+            city_name, state_name = full_input.split(' ', 1)
+            return city_name, state_name
     
     # Gte zipcode
     def get_user_zipcode():
-        return input("Enter your zipcode: ")
+        while True:
+            zipcode_check = re.compile(r'^(\d{5})')
+            zipcode = input("Enter your zipcode (e.g. 50234): ")
+            if zipcode_check.match(zipcode) and zipcode.isdigit:
+                return zipcode
+            else:
+                print(error)
     
     # Get Social Security Number
     def get_user_ssn():
-        return input("Enter your Social Security Number: ")
+        while True:
+            ssn_check = re.compile(r'^(\d{9}|\d{3}-\d{2}-\d{4})$')
+            ssn = input("Enter your Social Security Number (e.g. 453-33-9384): ")
+            if ssn_check.match(ssn) and ssn.isdigit:
+                return ssn
+            else:
+                print(error)
     
     # Direct input to variables
     name = get_user_name()
@@ -62,27 +97,54 @@ class PersonalInfo:
 class CurrentInsurance:
     # Get if user has insurance or not
     def is_user_insurance():
-        return input("Do you have health insurance (Y/N): ")
+        while True:
+            insurance = input("Do you have health insurance (Y/N): ")
+            if insurance.lower() == "y" or insurance.lower() == "n":
+                return insurance
+            else:
+                print(error)
     
-    # Get provider's name or the company that has insurance
+    # Get provider's name or the company that has insurance (TEST)
     def get_user_provider():
-        return input("Enter your provider's name: ")
+        while True:
+            provider = input("Enter your provider's name: ")
+            if provider.isalpha():
+                return provider
+            else:
+                print(error)
+
     
-    # Get the polciy number
+    # Get the polciy number (NEEDS FIXING IN THE VARIABLE AND WHAT IS A POLICY NUMBER)
     def get_user_policyNumber():
-        return input("Enter your policy number: ")
+        while True:
+            policy = input("Enter your policy number: ")
+            return policy
     
-    # Get the coverage start date
+    # Get the coverage start date 
     def get_user_coverageStart():
-        return input("Enter your coverage start date: ")
+        while True:
+            date_check = re.compile(r'^(\d{8}|\d{2}-\d{2}-\d{4})$')
+            date = input("Enter your coverage start date (e.g. 07-03-2021): ")
+            if date_check.match(date) and date.isdigit():
+                return date
+            else:
+                print(error)
     
     # Get the coverage end date
     def get_user_coverageEnd():
-        return input("Enter your coverage end date: ")
+        while True:
+            date_check = re.compile(r'^(\d{8}|\d{2}-\d{2}-\d{4})$')
+            date = input("Enter your coverage end date (e.g. 07-07-2021): ")
+            if date_check.match(date) and date.isdigit():
+                return date
+            else:
+                print(error)
     
-    # Get sources
+    # Get sources (MAYBE MAKE IT A LIST and check if it has more digits or cannot be just one or no input)
     def get_user_sources():
-        return input("Enter your source: ")
+        while True:
+            source = input("Enter your source: ")
+            return source 
     
     # Direct input to variables
     has_insurance = is_user_insurance()
@@ -99,23 +161,48 @@ class CurrentInsurance:
 class EmploymentInfo:
     # If user is employed or not
     def is_user_employed():
-        return input("Are you employed (Y/N): ")
+        while True:
+            answer = input("Are you employed (Y/N): ")
+            if answer.lower() == "n" or answer.lower() == "n":
+                return answer
+            else:
+                print(error)
     
-    # Get user's employer, such as a perosn or company
+    # Get user's employer, such as a perosn or company (TEST)
     def get_user_employer():
-        return input("Enter your emplyer's name: ")
+        while True:
+            employer = input("Enter your emplyer's name: ")
+            if employer.isalpha() and not employer.isdigit():
+                return employer
+            else:
+                print(error)
     
     # If user's employer offers insurance
     def is_employer_insurance():
-        return input("Does your employer offers insurance (Y/N): ")
+        while True:
+            answer = input("Does your employer offers insurance (Y/N): ")
+            if answer.lower() == "y" or answer.lower() == "n":
+                return answer
+            else:
+                print(error)
     
     # Get annual income of user
     def get_user_annualIncome():
-        return int(input("Enter your average annual income: "))
+        while True:
+            income = input("Enter your average annual income: ")
+            if income.isdigit():
+                return income
+            else:
+                print(error)
     
     # Get household size of user
     def get_user_householdSize():
-        return int(input("How many people live with you: "))
+        while True:
+            household = input("How many people live with you: ")
+            if household.isdigit():
+                return household
+            else:
+                print(error)
     
     # Direct input to variables
     is_employed = is_user_employed()
@@ -129,35 +216,68 @@ class EmploymentInfo:
 
 # Coverage Needs
 class CoverageNeeds:
-    # Get the coverage type of either indiviudal or family
+    # Get the coverage type of either indiviudal or family (TEST)
     def get_user_coverageType():
-        return input("Enter your coverage type (family or individual): ")
+        while True:
+            type = input("Enter your coverage type (family or individual): ")
+            if type.lower() == "family" or type.lower() == "individual":
+                return type
+            else:
+                print(error)
     
-    # Get user's providers seperated by comma
+    # Get user's providers until user exits (REEDIT IT TO MAKE IT SIMPLIER TO INPUT EACH THING, TEST)
     def get_user_providers():
-        i = input("Enter your preferred providers seperated by commas (e.g. doctors,hospitals,clinics): ")
-        list = [s.strip() for s in i.split(",")]
-        return list
+        list = []
+        while True:
+            i = input("Enter your preferred providers and type 'exit' when you are done (e.g. doctors, hospitals, or clinics): ")
+            if i.lower() == "exit":
+                return list
+            if i == " ":
+                print(error)
+
+            list.append([i.strip()])
     
-    # Get user's medical conditions in any amount seperated by commas
+    # Get user's medical conditions in any amount until user exits (TEST)
     def get_user_existingConditions(): 
-        i = input("Do you have any preexisitng medical conditions, and if so, seperate answers by commas (e.g. asthma,hemoroids): ")
-        list = [s.strip() for s in i.split(",")]
-        return list
+        list = []
+        while True:
+            i = input("Enter your current medical conditions and type 'exit' when you are done (e.g. asthma, heart problems, etc.): ")
+            if i.lower() == "exit":
+                return list
+            if i == " ":
+                print(error)
+
+            list.append([i.strip()])
     
-    # Get current prescription in any amount seperated by commas
+    # Get current prescription in any amount until user types i nexit to finish (TEST)
     def get_user_currentPrescription():
-        i = input("Enter your current perscriptions and seperate them by commas if neccessary: ")
-        list = [s.strip() for s in i.split(",")]
-        return list
+        list = []
+        while True:
+            i = input("Enter your current perscriptions and type 'exit' when you are done (e.g. ): ")
+            if i.lower() == "exit":
+                return list
+            if i == " ":
+                print(error)
+
+            list.append([i.strip()])
     
-    # Get one of the four coverage level, from Bronze, Silver, Gold, or Platinum
+    # Get one of the four coverage level, from Bronze, Silver, Gold, or Platinum (Also may need to put it with the other coverage places)
     def get_user_coverageLevel():
-        return input("Enter your coverage level: ")
+        while True:
+            level = input("Enter your coverage level (Bronze, Silver, Gold, and Platinum): ")
+            if level.lower() == "bronze" or level.lower() == "silver" or level.lower() == "gold" or level.lower() == "platinum":
+                return level
+            else:
+                print(error)
     
     # Get user's monthly budget
     def get_user_Monthlybudget():
-        return int(input("Enter your monthly budget: "))
+        while True:
+            budget = input("Enter your monthly budget: ")
+            if budget.isdigit():
+                return budget
+            else:
+                print(error)
     
     # Direct input to variables
     coverage_type = get_user_coverageType()
@@ -174,15 +294,30 @@ class CoverageNeeds:
 class EligibilityInfo:
     # if user is a US citizen
     def is_user_UScitizen():
-        return input("Are you a U.S. citizen (Y/N): ")
+        while True:
+            answer = input("Are you a U.S. citizen (Y/N): ")
+            if answer.lower() == "y" or answer.lower() == "n":
+                return answer
+            else:
+                print(error)
     
     # if user has medicaid
     def is_user_medicaid():
-        return input("Are you eligible for medicaid (Y/N): ")
+        while True:
+            answer = input("Are you eligible for medicaid (Y/N): ")
+            if answer.lower() == "y" or answer.lower() == "n":
+                return answer
+            else:
+                print(error)
     
     # if user has medicare
     def is_user_medicare():
-        return input("Are you eligible for medicare (Y/N): ")
+        while True:
+            answer = input("Are you eligible for medicare (Y/N): ")
+            if answer.lower() == "y" or answer.lower() == "n":
+                return answer
+            else:
+                print(error)
     
     # Get user's recent events into a 2D list
     def get_user_recentEvent():
@@ -201,11 +336,21 @@ class EligibilityInfo:
     
     # if user is a student
     def is_user_student():
-        return input("Are you a current student (Y/N): ")
+        while True:
+            answer = input("Are you a current student (Y/N): ")
+            if answer.lower() == "y" or answer.lower() == "n":
+                return answer
+            else:
+                print(error)
     
     # if user is a veteran
     def is_user_veteran():
-        return input("Are you a veteran (Y/N): ")
+        while True:
+            answer = input("Are you a veteran (Y/N): ")
+            if answer.lower() == "y" or answer.lower() == "n":
+                return answer
+            else:
+                print(error)
     
     # Input data assign into new variables
     is_UScitizen = is_user_UScitizen()
@@ -220,11 +365,11 @@ class EligibilityInfo:
 
 # Documents Input
 class Documents:
-    # Get user's insurance through a url link
+    # Get user's insurance through a url link (Need to make awhile loop to check if it is a url link)
     def get_user_insurance():
         return input("Enter your insurance card's or policy document's url: ")
     
-    # Get user's proof of income (with a residency, income, or employment documents) by posting a url link.
+    # Get user's proof of income (with a residency, income, or employment documents) by posting a url link. (MAKE SURE IT IS A URL)
     def get_user_proofOfIncome():
         return input("Enter your proof of income, residency, or employment documents url: ")
     
