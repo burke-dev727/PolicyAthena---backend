@@ -1,10 +1,11 @@
 import re
 # Author: James Zheng
 # Edited: 6/20/2025
-# Updated 7/11/2025
+# Updated 7/13/2025
 # Notes: User inputs their data here and transmitts it back to input_route
 
 # Variable to display when the input is incorrect
+
 error = "Invalid input. Please try Again."
 
 # Personal Info
@@ -34,7 +35,7 @@ class PersonalInfo:
                 print(error)
             else:
                 return email
-    
+            
     # Get phone number
     def get_user_phone():
         phone_check = re.compile(r'^(\d{10}|\d{3}-\d{3}-\d{4})$')
@@ -45,20 +46,34 @@ class PersonalInfo:
             else:
                 print(error)
     
-    # Get address number and street name in that order, needs fixing for while loop
+    # Get address number and street name in that order
     def get_user_home(): 
+        home_check = re.compile(r'^\s*(\d+)\s*,\s*(.+\S)\s*$')
         while True:
-            # home_check = re.compile(r'^\d+\s+\w+(\s+\w+)+$')
             full_input = input("Enter your address (e.g., '123, Main Street'): ").strip()
-            address_num, street_name = full_input.split(' ', 1) 
-            return address_num, street_name
+            if home_check.match(full_input.strip()):
+                address_num, street_name = full_input.split(' ', 1) 
+                return address_num, street_name
+            else:
+                print(error)
     
-    # Get city and state name, needs fixing for while loop
+    # Get city and state name
     def get_user_location(): 
+        location_check = re.compile(r'^\s*(.+\S)\s*,\s*(.+\S)\s*$')
         while True:
             full_input = input("Enter your city and state (e.g., 'Plano, Texas'): ")
-            city_name, state_name = full_input.split(' ', 1)
-            return city_name, state_name
+            try:
+                int(full_input)
+                print(error)
+                continue
+            except ValueError:
+                pass
+
+            if location_check.match(full_input.strip()):
+                city_name, state_name = full_input.split(' ', 1)
+                return city_name, state_name
+            else:
+                print(error)
     
     # Gte zipcode
     def get_user_zipcode():
@@ -104,28 +119,35 @@ class CurrentInsurance:
             else:
                 print(error)
     
-    # Get provider's name or the company that has insurance (TEST)
+    # Get provider's name or the company that has insurance
     def get_user_provider():
         while True:
             provider = input("Enter your provider's name: ")
-            if provider.isalpha():
+            if provider.strip():
                 return provider
             else:
                 print(error)
 
     
-    # Get the polciy number (NEEDS FIXING IN THE VARIABLE AND WHAT IS A POLICY NUMBER)
+    # Get the polciy number
     def get_user_policyNumber():
         while True:
             policy = input("Enter your policy number: ")
-            return policy
+            if policy != "":
+                return policy
+            else:
+                print(error)
     
     # Get the coverage start date 
     def get_user_coverageStart():
+        print("Now tell us if your current or last coverage start and end. If not, please type in 'none':")
         while True:
-            date_check = re.compile(r'^(\d{8}|\d{2}-\d{2}-\d{4})$')
-            date = input("Enter your coverage start date (e.g. 07-03-2021): ")
-            if date_check.match(date) and date.isdigit():
+            date_check = re.compile(r'^(\d{8}|\d{4}-\d{2}-\d{2})$')
+            date = input("Enter your coverage start date (e.g. YYYY-MM-DD): ").strip()
+            clean_date = date.replace("-", "")
+            if date.lower() == "none":
+                return date
+            if date_check.match(date) and clean_date.isdigit():
                 return date
             else:
                 print(error)
@@ -133,17 +155,20 @@ class CurrentInsurance:
     # Get the coverage end date
     def get_user_coverageEnd():
         while True:
-            date_check = re.compile(r'^(\d{8}|\d{2}-\d{2}-\d{4})$')
-            date = input("Enter your coverage end date (e.g. 07-07-2021): ")
-            if date_check.match(date) and date.isdigit():
+            date_check = re.compile(r'^(\d{8}|\d{4}-\d{2}-\d{2})$')
+            date = input("Enter your coverage end date, or type in 'none' if you don't have coverage (e.g. YYYY-MM-DD): ").strip()
+            clean_date = date.replace("-", "")
+            if date.lower() == "none":
+                return date
+            if date_check.match(date) and clean_date.isdigit():
                 return date
             else:
                 print(error)
     
-    # Get sources (MAYBE MAKE IT A LIST and check if it has more digits or cannot be just one or no input)
+    # Get source
     def get_user_sources():
         while True:
-            source = input("Enter your source: ")
+            source = input("Enter whether you obatined a plan through work, a private insurer, or a government program (e.g., Medicare, Medicaid, Marketplace)?: ")
             return source 
     
     # Direct input to variables
@@ -163,7 +188,7 @@ class EmploymentInfo:
     def is_user_employed():
         while True:
             answer = input("Are you employed (Y/N): ")
-            if answer.lower() == "n" or answer.lower() == "n":
+            if answer.lower() == "y" or answer.lower() == "n":
                 return answer
             else:
                 print(error)
@@ -171,11 +196,11 @@ class EmploymentInfo:
     # Get user's employer, such as a perosn or company (TEST)
     def get_user_employer():
         while True:
-            employer = input("Enter your emplyer's name: ")
-            if employer.isalpha() and not employer.isdigit():
-                return employer
-            else:
+            employer = input("Enter your employer's name: ")
+            if employer == "":
                 print(error)
+            else:
+                return employer
     
     # If user's employer offers insurance
     def is_employer_insurance():
@@ -225,7 +250,7 @@ class CoverageNeeds:
             else:
                 print(error)
     
-    # Get user's providers until user exits (REEDIT IT TO MAKE IT SIMPLIER TO INPUT EACH THING, TEST)
+    # Get user's providers until user exits (TEST)
     def get_user_providers():
         list = []
         while True:
@@ -261,7 +286,7 @@ class CoverageNeeds:
 
             list.append([i.strip()])
     
-    # Get one of the four coverage level, from Bronze, Silver, Gold, or Platinum (Also may need to put it with the other coverage places)
+    # Get one of the four coverage level, from Bronze, Silver, Gold, or Platinum
     def get_user_coverageLevel():
         while True:
             level = input("Enter your coverage level (Bronze, Silver, Gold, and Platinum): ")
@@ -322,7 +347,7 @@ class EligibilityInfo:
     # Get user's recent events into a 2D list
     def get_user_recentEvent():
         items = []
-        print("Enter your recent life events and its dates (e.g. 'Wedding,07-06-2025'). Type 'exit' when finished: ")
+        print("Enter your recent life events and its dates (e.g. 'Wedding,YYYY-MM-DD'). Type 'exit' when finished: ")
         while True:
             repeat = input("Enter other recent life events and its dates: ")
             if repeat.lower() == "exit":
@@ -331,7 +356,7 @@ class EligibilityInfo:
                 name_event, date_event = repeat.split(',')
                 items.append([name_event.strip(), date_event.strip()])
             except ValueError:
-                print("Invalid format. Please enter data as: 'EventName,Dates'")
+                print("Invalid format. Please enter data as 'EventName,YYYY-MM-DD'.")
         return items
     
     # if user is a student
@@ -365,13 +390,23 @@ class EligibilityInfo:
 
 # Documents Input
 class Documents:
-    # Get user's insurance through a url link (Need to make awhile loop to check if it is a url link)
+    # Get user's insurance through a url link
     def get_user_insurance():
-        return input("Enter your insurance card's or policy document's url: ")
+        while True:
+            insurance = input("Enter your insurance card's or policy document link (must contain .url): ")
+            if ".url" in insurance:
+                return insurance
+            else:
+                print(error)
     
-    # Get user's proof of income (with a residency, income, or employment documents) by posting a url link. (MAKE SURE IT IS A URL)
+    # Get user's proof of income (with a residency, income, or employment documents) by posting a url link.
     def get_user_proofOfIncome():
-        return input("Enter your proof of income, residency, or employment documents url: ")
+        while True:
+            proof = input("Enter your proof of income, residency, or employment documents (must contain .url): ")
+            if ".url" in proof:
+                return proof
+            else:
+                print(error)
     
     # Assigns new variables for each input data
     user_insurance = get_user_insurance()
@@ -379,6 +414,14 @@ class Documents:
     
     # Places docuemnt data into list
     list_documents = [user_insurance, user_proofOfIncome] # 2
+
+# Test
+print(PersonalInfo.list_personalInfo)
+print(CurrentInsurance.list_currentInsurance)
+print(EmploymentInfo.list_employmentInfo)
+print(CoverageNeeds.list_coverageNeeds)
+print(EligibilityInfo.list_eligibilityInfo)
+print(Documents.list_documents)
 
 class InputInterpreterAgent:
     def run(self, raw_input: dict) -> dict:
