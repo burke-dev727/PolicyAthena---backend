@@ -5,7 +5,6 @@ import re
 # Notes: User inputs their data here and transmitts it back to input_route
 
 # Variable to display when the input is incorrect
-
 error = "Invalid input. Please try Again."
 
 # Personal Info
@@ -119,11 +118,11 @@ class CurrentInsurance:
             else:
                 print(error)
     
-    # Get provider's name or the company that has insurance (TEST)
+    # Get provider's name or the company that has insurance
     def get_user_provider():
         while True:
             provider = input("Enter your provider's name: ")
-            if provider.isalpha():
+            if provider.strip():
                 return provider
             else:
                 print(error)
@@ -131,18 +130,23 @@ class CurrentInsurance:
     
     # Get the polciy number
     def get_user_policyNumber():
+        while True:
             policy = input("Enter your policy number: ")
-            return policy
+            if policy != "":
+                return policy
+            else:
+                print(error)
     
-    print("Now tell us if your current or last coverage start and end. If not, please type in 'none':")
     # Get the coverage start date 
     def get_user_coverageStart():
+        print("Now tell us if your current or last coverage start and end. If not, please type in 'none':")
         while True:
-            date_check = re.compile(r'^(\d{8}|\d{2}-\d{2}-\d{4})$')
-            date = input("Enter your coverage start date (e.g. 07-03-2021): ")
+            date_check = re.compile(r'^(\d{8}|\d{4}-\d{2}-\d{2})$')
+            date = input("Enter your coverage start date (e.g. YYYY-MM-DD): ").strip()
+            clean_date = date.replace("-", "")
             if date.lower() == "none":
                 return date
-            if date_check.match(date) and date.isdigit():
+            if date_check.match(date) and clean_date.isdigit():
                 return date
             else:
                 print(error)
@@ -150,11 +154,12 @@ class CurrentInsurance:
     # Get the coverage end date
     def get_user_coverageEnd():
         while True:
-            date_check = re.compile(r'^(\d{8}|\d{2}-\d{2}-\d{4})$')
-            date = input("Enter your coverage end date, or type in 'none' if you don't have coverage (e.g. 07-07-2021): ")
+            date_check = re.compile(r'^(\d{8}|\d{4}-\d{2}-\d{2})$')
+            date = input("Enter your coverage end date, or type in 'none' if you don't have coverage (e.g. YYYY-MM-DD): ").strip()
+            clean_date = date.replace("-", "")
             if date.lower() == "none":
                 return date
-            if date_check.match(date) and date.isdigit():
+            if date_check.match(date) and clean_date.isdigit():
                 return date
             else:
                 print(error)
@@ -182,7 +187,7 @@ class EmploymentInfo:
     def is_user_employed():
         while True:
             answer = input("Are you employed (Y/N): ")
-            if answer.lower() == "n" or answer.lower() == "n":
+            if answer.lower() == "y" or answer.lower() == "n":
                 return answer
             else:
                 print(error)
@@ -190,11 +195,11 @@ class EmploymentInfo:
     # Get user's employer, such as a perosn or company (TEST)
     def get_user_employer():
         while True:
-            employer = input("Enter your emplyer's name: ")
-            if employer.isalpha() and not employer.isdigit():
-                return employer
-            else:
+            employer = input("Enter your employer's name: ")
+            if employer == "":
                 print(error)
+            else:
+                return employer
     
     # If user's employer offers insurance
     def is_employer_insurance():
@@ -341,7 +346,7 @@ class EligibilityInfo:
     # Get user's recent events into a 2D list
     def get_user_recentEvent():
         items = []
-        print("Enter your recent life events and its dates (e.g. 'Wedding,07-06-2025'). Type 'exit' when finished: ")
+        print("Enter your recent life events and its dates (e.g. 'Wedding,YYYY-MM-DD'). Type 'exit' when finished: ")
         while True:
             repeat = input("Enter other recent life events and its dates: ")
             if repeat.lower() == "exit":
@@ -350,7 +355,7 @@ class EligibilityInfo:
                 name_event, date_event = repeat.split(',')
                 items.append([name_event.strip(), date_event.strip()])
             except ValueError:
-                print("Invalid format. Please enter data as: 'EventName,Dates'")
+                print("Invalid format. Please enter data as 'EventName,YYYY-MM-DD'.")
         return items
     
     # if user is a student
@@ -384,7 +389,7 @@ class EligibilityInfo:
 
 # Documents Input
 class Documents:
-    # Get user's insurance through a url link (Need to make awhile loop to check if it is a url link)
+    # Get user's insurance through a url link
     def get_user_insurance():
         while True:
             insurance = input("Enter your insurance card's or policy document link (must contain .url): ")
@@ -393,7 +398,7 @@ class Documents:
             else:
                 print(error)
     
-    # Get user's proof of income (with a residency, income, or employment documents) by posting a url link. (MAKE SURE IT IS A URL)
+    # Get user's proof of income (with a residency, income, or employment documents) by posting a url link.
     def get_user_proofOfIncome():
         while True:
             proof = input("Enter your proof of income, residency, or employment documents (must contain .url): ")
@@ -409,12 +414,13 @@ class Documents:
     # Places docuemnt data into list
     list_documents = [user_insurance, user_proofOfIncome] # 2
 
-print(PersonalInfo.list_personalInfo + "\n")
-print(CurrentInsurance.list_currentInsurance + "\n")
-print(EmploymentInfo.list_employmentInfo + "\n")
-print(CoverageNeeds.list_coverageNeeds + "\n")
-print(EligibilityInfo.list_eligibilityInfo + "\n")
-print(Documents.list_documents + "\n")
+# Test
+print(PersonalInfo.list_personalInfo)
+print(CurrentInsurance.list_currentInsurance)
+print(EmploymentInfo.list_employmentInfo)
+print(CoverageNeeds.list_coverageNeeds)
+print(EligibilityInfo.list_eligibilityInfo)
+print(Documents.list_documents)
 
 class InputInterpreterAgent:
     def run(self, raw_input: dict) -> dict:
