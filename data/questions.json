@@ -6,10 +6,8 @@
         "ssn": "822-78-1111",
         "email": "random@gmail.com",
         "phone": "999-713-9143",
-        "address": "6534",
-        "street": "SaintsRow",
-        "city": "San Andreas",
-        "state": "California",
+        "address": "6534, Saints Row",
+        "location": "San Adnreas, California",
         "zip_code": "40886"
       },
 
