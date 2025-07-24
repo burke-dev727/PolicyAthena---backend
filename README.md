@@ -31,8 +31,10 @@ pip install -r requirements.txt
 ```
 5. Set up environment variables:
 - Create a `.env` file in the root of your project with the following variables:
+(These will be given through our google drive, please copy needed credentials and save into your local .env file)
 ```
 OPENAI_API_KEY=your_openai_api_key
+DATABASE_URL=postgresql://postgres:<YOUR_PASSWORD>@db.<YOUR_PROJECT_ID>.supabase.co:5432/postgres
 ```
 6. Run the application:
 ```
