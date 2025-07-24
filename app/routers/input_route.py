@@ -1,21 +1,23 @@
-from fastapi import APIRouter, Request
-from pydantic import BaseModel
-from input_interpreter import user_data
-router = APIRouter()
+from fastapi import APIRouter
+from app.models.input_models import UserProfileInput
+from app.agents.input_interpreter import InputInterpreterAgent
+from app.db.crud import save_user_profile
+from app.services.user_input import user_input
 
-class InputData(user_data):
-    name: user_data[0]
-    age: user_data[1]
-    zip_code: user_data[2]
+router = APIRouter(prefix="/userInput", tags=["userInput"])
 
-@router.post("/input")
-async def process_input(data: InputData):
-  
-    return {
-        "message": "Input received successfully.",
-        "parsed": {
-            "name": data.name.upper(),
-            "age": data.age,
-            "zip_code": data.zip_code
+@router.post("/profile")
+async def process_user_profile(data: UserProfileInput):
+    try:
+        interpreter = InputInterpreterAgent()
+        parsed_profile = interpreter.run(data.dict())
+        profile_id = user_input(parsed_profile)
+        return {
+            "message": "Profile received and stored.",
+            "profile_id": profile_id,
+            "parsed_profile": parsed_profile
         }
-    }
+    except Exception as e:
+        import traceback
+        print(traceback.format_exc())
+        return {"error": str(e)}

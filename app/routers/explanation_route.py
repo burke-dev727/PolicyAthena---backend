@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import Dict
 
-router = APIRouter()
+router = APIRouter(prefix="/explanation", tags=["explanation"])
 
 class ExplanationRequest(BaseModel):
     plan: Dict[str, str]

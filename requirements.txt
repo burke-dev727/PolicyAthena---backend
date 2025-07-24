@@ -4,3 +4,12 @@ openai
 pydantic
 requests
 openai==1.47.0
+pdfplumber
+python-multipart
+
+# Database dependencies
+sqlalchemy
+psycopg2-binary
+
+# Environment variable loader
+python-dotenv
