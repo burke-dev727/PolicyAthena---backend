@@ -32,7 +32,7 @@
         "preexisting_conditions": ["diabetes", "hypertension"],
         "current_prescriptions": ["lisinopril", "metformin"],
         "coverage_level": "bronze, silver, gold, or platinum",  
-        "monthly_budget": 1000
+        "monthly_budget": "500-300"
   },
     "eligibility_info": {
         "is_us_citizen": false,
