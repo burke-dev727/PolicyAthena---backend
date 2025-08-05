@@ -27,11 +27,11 @@
         "household_size": 3
   },
     "coverage_needs": {
-        "coverage_type": "family or individual", 
+        "coverage_type": "family", 
         "preferred_providers": ["Quahog General Hospital", "Walter White"],
         "preexisting_conditions": ["diabetes", "hypertension"],
         "current_prescriptions": ["lisinopril", "metformin"],
-        "coverage_level": "bronze, silver, gold, or platinum",  
+        "coverage_level": "bronze",  
         "monthly_budget": "500-300"
   },
     "eligibility_info": {
