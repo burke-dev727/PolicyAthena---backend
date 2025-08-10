@@ -13,27 +13,51 @@ error = "Invalid input."
 
 class InputInterpreterAgent:
     def run(self, raw_input: dict) -> dict:
-        # Placeholder: In the future, add preprocessing, validation, or transformation here
-        required_fields = ["name", "age", "email", "phone", "address", "location", "zipcode", "ssn"]
-        for field in required_fields:
-            if not raw_input.get(field):
-                raise ValueError(f"Missing required field: {field}")
+        # Extract insurance-related fields
+        insurance = {
+            "have_insurance": raw_input.get("have_insurance", False),
+            "insurance_provider": raw_input.get("insurance_provider", ""),
+            "policy_number": raw_input.get("policy_number", ""),
+            "start_date": raw_input.get("start_date", ""),
+            "end_date": raw_input.get("end_date", ""),
+            "source": raw_input.get("source", "")
+        }
 
-        # Check name is a valid string
-        try: 
-            name = raw_input.get("name", "")
-            if not re.match(r"^[a-zA-Z\s]+$", name):
-                raise ValueError("Name must contain only letters and spaces")
-        except Exception:
-            raise ValueError("Name must be a valid string")
-        
-        # Check age is a positive integer
-        try:
-            age = int(raw_input.get("age", 0))
-            if age <= 0:
-                raise ValueError("Age must be a positive integer")
-        except Exception:
-            raise ValueError("Age must be a valid integer")
+        # Extract coverage fields
+        coverage = {
+            "coverage_type": raw_input.get("coverage_type", ""),
+            "providers": raw_input.get("providers", ""),
+            "current_conditions": raw_input.get("current_conditions", ""),
+            "current_perscriptions": raw_input.get("current_perscriptions", ""),
+            "coverage_level": raw_input.get("coverage_level", ""),
+            "monthly_budget": raw_input.get("monthly_budget", "")
+        }
 
-        # Add more validation as needed...
-        return raw_input
+        # Extract eligibility fields
+        eligibility = {
+            "is_US_Citizen": raw_input.get("is_US_Citizen", False),
+            "is_Mediaid": raw_input.get("is_Mediaid", False),
+            "is_Medicare": raw_input.get("is_Medicare", False),
+            "events": raw_input.get("events", ""),
+            "is_Veteran": raw_input.get("is_Veteran", False),
+            "is_StudentEligible": raw_input.get("is_StudentEligible", False)
+        }
+
+        # Extract preferences fields (delete later or move it)
+        preferences = {
+            "user_insurance_docs": raw_input.get("user_insurance_docs", ""),
+            "proof_of_income_docs": raw_input.get("proof_of_income_docs", "")
+        }
+
+        # Validation (make more)
+        if insurance["have_insurance"] and not insurance["insurance_provider"]:
+            raise ValueError("Insurance provider must be filled if you have insurance.")
+
+        return {
+           # "personal": personal,
+           # "employment": employment,
+            "insurance": insurance,
+            "coverage": coverage,
+            "eligibility": eligibility,
+            "preferences": preferences
+        }
