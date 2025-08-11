@@ -1,8 +1,11 @@
 # app/db/models.py
 # Created by Xinrui Hou
 # Date: 2025-07-22
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, String, Integer, Boolean, Date, Text, ForeignKey, TIMESTAMP, text
+from sqlalchemy.orm import relationship
+from sqlalchemy import func
+
 import uuid
 
 Base = declarative_base()
@@ -10,8 +13,7 @@ Base = declarative_base()
 class PersonalInfo(Base):
     __tablename__ = "personal_info"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    first_name = Column(String(100))
-    last_name = Column(String(100))
+    name = Column(String(100))
     age = Column(Integer)
     ssn = Column(String(20))
     email = Column(String(255))
@@ -23,19 +25,19 @@ class PersonalInfo(Base):
 class CurrentInsurance(Base):
     __tablename__ = "current_insurance"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    has_insurance = Column(Boolean)
+    has_insurance = Column(Boolean, default=False, nullable=False)
     provider_name = Column(String(255))
     policy_number = Column(String(100))
-    coverage_start_date = Column(Date)
-    coverage_end_date = Column(Date)
+    start_date = Column(Date)
+    end_date = Column(Date)
     source = Column(String(100))
 
 class EmploymentInfo(Base):
     __tablename__ = "employment_info"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    is_employed = Column(Boolean)
+    is_employed = Column(Boolean, default=False, nullable=False)
     employer_name = Column(String(255))
-    employer_offers_insurance = Column(Boolean)
+    employer_offers_insurance = Column(Boolean, default=False, nullable=False)
     annual_income = Column(Integer)
     household_size = Column(Integer)
 
@@ -45,15 +47,18 @@ class CoverageNeeds(Base):
     coverage_type = Column(String(50))
     coverage_level = Column(String(50))
     monthly_budget = Column(Integer)
+    preferred_providers = relationship("PreferredProvider", backref="coverage_needs")
+    preexisting_conditions = relationship("PreexistingCondition", backref="coverage_needs")
+    current_prescriptions = relationship("CurrentPrescription", backref="coverage_needs")
 
 class EligibilityInfo(Base):
     __tablename__ = "eligibility_info"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    is_us_citizen = Column(Boolean)
-    eligible_for_medicaid = Column(Boolean)
-    eligible_for_medicare = Column(Boolean)
-    is_student = Column(Boolean)
-    is_veteran = Column(Boolean)
+    is_us_citizen = Column(Boolean, default=False, nullable=False)
+    eligible_for_medicaid = Column(Boolean, default=False, nullable=False)
+    eligible_for_medicare = Column(Boolean, default=False, nullable=False)
+    is_student = Column(Boolean, default=False, nullable=False)
+    is_veteran = Column(Boolean, default=False, nullable=False)
 
 class Documents(Base):
     __tablename__ = "documents"
@@ -80,7 +85,7 @@ class CurrentPrescription(Base):
     prescription = Column(String(255))
 
 class RecentLifeEvent(Base):
-    __tablename__ = "recent_life_event"
+    __tablename__ = "recent_life_events"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     eligibility_info_id = Column(String, ForeignKey('eligibility_info.id'))
     event = Column(String(255))
@@ -88,10 +93,14 @@ class RecentLifeEvent(Base):
 class UserProfile(Base):
     __tablename__ = "user_profiles"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    personal_info_id = Column(String, ForeignKey('personal_info.id'))
+    personal_info = relationship("PersonalInfo")
+    employment_info = relationship("EmploymentInfo")
+
+class UserInput(Base):
+    __tablename__ = "user_inputs"
+    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     current_insurance_id = Column(String, ForeignKey('current_insurance.id'))
-    employment_info_id = Column(String, ForeignKey('employment_info.id'))
     coverage_needs_id = Column(String, ForeignKey('coverage_needs.id'))
     eligibility_info_id = Column(String, ForeignKey('eligibility_info.id'))
     documents_id = Column(String, ForeignKey('documents.id'))
-    created_at = Column(TIMESTAMP, server_default=text("timezone('utc', now())"))
+    created_at = Column(TIMESTAMP, server_default=func.now())
