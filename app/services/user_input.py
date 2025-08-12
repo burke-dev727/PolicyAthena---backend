@@ -1,77 +1,73 @@
-# app/services/user_profile_service.py
+# app/services/user_input.py
+# Created by Xinrui Hou
+# Date: 2025-08-10
+# Purpose: Service to store user input data directly in the user_input table
+#          Handles data transformation from JSON format to database schema
 
 from app.db.session import SessionLocal
-from app.db.models import (
-    PersonalInfo, CurrentInsurance, EmploymentInfo, CoverageNeeds,
-    EligibilityInfo, Documents, UserProfile,
-    PreferredProvider, PreexistingCondition, CurrentPrescription, RecentLifeEvent
-)
+from app.db.models import UserInput
+from datetime import datetime
 
 def user_input(profile_data: dict):
     db = SessionLocal()
     try:
-        # 1. Save each section
-        personal_info = PersonalInfo(**profile_data['personal_info'])
-        db.add(personal_info)
-        db.flush()  # get id
+        # Date Parsing Section
+        # Convert string dates from JSON to Python date objects for database storage
+        # Format expected: 'YYYY-MM-DD' (e.g., '2025-08-07')
+        start_date = None
+        end_date = None
+        
+        if profile_data.get('start_date'):
+            try:
+                start_date = datetime.strptime(profile_data['start_date'], '%Y-%m-%d').date()
+            except:
+                start_date = None
+                
+        if profile_data.get('end_date'):
+            try:
+                end_date = datetime.strptime(profile_data['end_date'], '%Y-%m-%d').date()
+            except:
+                end_date = None
 
-        current_insurance = CurrentInsurance(**profile_data['current_insurance'])
-        db.add(current_insurance)
-        db.flush()
-
-        employment_info = EmploymentInfo(**profile_data['employment_info'])
-        db.add(employment_info)
-        db.flush()
-
-        coverage_needs = CoverageNeeds(
-            coverage_type=profile_data['coverage_needs']['coverage_type'],
-            coverage_level=profile_data['coverage_needs']['coverage_level'],
-            monthly_budget=profile_data['coverage_needs']['monthly_budget']
+        user_input_record = UserInput(
+            # Insurance Information
+            have_insurance=profile_data.get('have_insurance', False),
+            insurance_provider=profile_data.get('insurance_provider', ''),
+            policy_number=profile_data.get('policy_number', ''),
+            start_date=start_date,                    
+            end_date=end_date,                       
+            source=profile_data.get('source', ''),
+            
+            # Coverage Preferences
+            coverage_type=profile_data.get('coverage_type', ''),
+            providers=profile_data.get('providers', ''),
+            current_conditions=profile_data.get('current_conditions', ''),
+            current_prescriptions=profile_data.get('current_perscriptions', ''),  # JSON: current_perscriptions -> DB: current_prescriptions
+            coverage_level=profile_data.get('coverage_level', ''),
+            monthly_budget=profile_data.get('monthly_budget', ''),
+            
+            # Eligibility Information
+            is_us_citizen=profile_data.get('is_US_Citizen', False),   
+            is_medicaid=profile_data.get('is_Mediaid', False),           
+            is_medicare=profile_data.get('is_Medicare', False),          
+            events=profile_data.get('events', ''),
+            is_veteran=profile_data.get('is_Veteran', False),          
+            is_student_eligible=profile_data.get('is_StudentEligible', False),  
+            
+            # Document References
+            user_insurance_docs=profile_data.get('user_insurance_docs', ''),
+            proof_of_income_docs=profile_data.get('proof_of_income_docs', '')
         )
-        db.add(coverage_needs)
-        db.flush()
-
-        # Save arrays for coverage_needs
-        for provider in profile_data['coverage_needs']['preferred_providers']:
-            db.add(PreferredProvider(coverage_needs_id=coverage_needs.id, provider_name=provider))
-        for cond in profile_data['coverage_needs']['preexisting_conditions']:
-            db.add(PreexistingCondition(coverage_needs_id=coverage_needs.id, condition=cond))
-        for rx in profile_data['coverage_needs']['current_prescriptions']:
-            db.add(CurrentPrescription(coverage_needs_id=coverage_needs.id, prescription=rx))
-
-        eligibility_info = EligibilityInfo(
-            is_us_citizen=profile_data['eligibility_info']['is_us_citizen'],
-            eligible_for_medicaid=profile_data['eligibility_info']['eligible_for_medicaid'],
-            eligible_for_medicare=profile_data['eligibility_info']['eligible_for_medicare'],
-            is_student=profile_data['eligibility_info']['is_student'],
-            is_veteran=profile_data['eligibility_info']['is_veteran']
-        )
-        db.add(eligibility_info)
-        db.flush()
-
-        # Save recent_life_event
-        for event in profile_data['eligibility_info']['recent_life_event']:
-            db.add(RecentLifeEvent(eligibility_info_id=eligibility_info.id, event=event))
-
-        documents = Documents(**profile_data['documents'])
-        db.add(documents)
-        db.flush()
-
-        # 2. Save main user_profiles row
-        user_profile = UserProfile(
-            personal_info_id=personal_info.id,
-            current_insurance_id=current_insurance.id,
-            employment_info_id=employment_info.id,
-            coverage_needs_id=coverage_needs.id,
-            eligibility_info_id=eligibility_info.id,
-            documents_id=documents.id
-        )
-        db.add(user_profile)
-        db.commit()
-        db.refresh(user_profile)
-        return user_profile.id
+        
+        # Database Operations
+        db.add(user_input_record)       
+        db.commit()                     
+        db.refresh(user_input_record)    
+        
+        return user_input_record.id      
+        
     except Exception as e:
-        db.rollback()
-        raise e
+        db.rollback()                  
+        raise e                         
     finally:
-        db.close()
+        db.close()                       
