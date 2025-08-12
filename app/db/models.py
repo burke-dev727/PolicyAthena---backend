@@ -17,10 +17,6 @@ class PersonalInfo(Base):
     email = Column(String(255))
     phone = Column(String(50))
     address = Column(String(255))
-    street = Column(String(255))
-    city = Column(String(100))
-    state = Column(String(100))
-    zip_code = Column(String(20))
 
 class CurrentInsurance(Base):
     __tablename__ = "current_insurance"

@@ -11,10 +11,6 @@ class PersonalInfo(BaseModel):
     email: str
     phone: str
     address: str
-    street: str
-    city: str
-    state: str
-    zip_code: str
 
 class CurrentInsurance(BaseModel):
     has_insurance: bool
