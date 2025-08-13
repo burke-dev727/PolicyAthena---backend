@@ -10,6 +10,9 @@ import uuid
 
 Base = declarative_base()
 
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
+engine = create_engine(DATABASE_URL)
+
 class PersonalInfo(Base):
     __tablename__ = "personal_info"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))

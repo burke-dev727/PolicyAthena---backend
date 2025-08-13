@@ -5,7 +5,7 @@
 # Notes: Will need to move the saved files into DB
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from app.models.input_models import UserProfileInput
+# from app.models.input_models import UserProfileInput
 from app.agents.input_interpreter import InputInterpreterAgent
 from app.db.crud import save_userprofile_data, save_userinput_data
 import os

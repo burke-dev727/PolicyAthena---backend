@@ -7,6 +7,7 @@ from app.routers import (
     explanation_route,
     orchestrator_route
 )
+from app.routers import contact_route
 
 app = FastAPI(title="PolicyAthena Backend")
 
@@ -17,3 +18,4 @@ app.include_router(matcher_route.router)
 app.include_router(scorer_route.router)
 app.include_router(explanation_route.router)
 app.include_router(orchestrator_route.router)
+app.include_router(contact_route.router)
