@@ -43,10 +43,15 @@ def save_user_profile(profile_data: dict):
             age=profile_data.get('age'),                        # User's age (can be None)
             email=profile_data.get('email', ''),                # User's email address
             phone=profile_data.get('phone', ''),                # User's phone number
-            address=profile_data.get('address', ''),            # User's street address
-            city=profile_data.get('city', ''),                  # User's city
-            state=profile_data.get('state', ''),                # User's state
-            zip_code=profile_data.get('zip_code', '')           # User's zip code
+            address=profile_data.get('address', ''),            # User's address (street name, address number)
+            location=profile_data.get('location', ''),          # User's location (city, state)
+            zip_code=profile_data.get('zip_code', ''),          # User's zipcode
+            ssn=profile_data.get('ssn', ''),                    # User's social security number
+            is_employed=profile_data.get('is_employed', ''),    # User's employment status
+            employer_name=profile_data.get('employer_name', ''), # User's employer's name
+            is_employeroffers=profile_data.get('is_employeroffers', ''), # User's employers offers yes/no
+            annual_income=profile_data.get('annual_income', ''), # User's annual income
+            household_size=profile_data.get('annual_income', '') # User's household size
         )
         
         # Database Operations
