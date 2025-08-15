@@ -9,17 +9,42 @@ from .models import (
     PreexistingCondition, CurrentPrescription, RecentLifeEvent
 )
 
+# Safe integer conversion with error handling
+def safe_int(value):
+    try:
+        return int(value) if value else None
+    except (ValueError, TypeError):
+        return None
+
+# Safe date conversion
+def safe_date(value):
+    try:
+        if value:
+            return datetime.datetime.strptime(value, "%Y-%m-%d").date()
+        return None
+    except (ValueError, TypeError):
+        return None
+
+# Validate user input data
+def validate_userinput_data(data):
+    required_fields = ["have_insurance", "coverage_type", "coverage_level"]
+    missing_fields = [field for field in required_fields if not data.get(field)]
+    if missing_fields:
+        raise ValueError(f"Missing required fields: {missing_fields}")
+    return True
+
 def save_userinput_data(data: dict):
     db = SessionLocal()
+    validate_userinput_data(data)
     # UserInput Data
     try: 
          # Save CurrentInsurance
         insurance = CurrentInsurance(
-            has_insurance=data.get("have_insurance") if data.get("have_insurance") else None,
+            have_insurance=data.get("have_insurance") if data.get("have_insurance") else None,
             insurance_provider=data.get("insurance_provider", "") if data.get("insurance_provider") else None,
             policy_number=data.get("policy_number", "") if data.get("policy_number") else None,
-            start_date=data.get("start_date") if data.get("start_date") else None,
-            end_date=data.get("end_date") if data.get("end_date") else None,
+            start_date=safe_date(data.get("start_date")),
+            end_date=safe_date(data.get("end_date")),
             source=data.get("source", "") if data.get("source") else None
         )
         db.add(insurance)
@@ -29,7 +54,7 @@ def save_userinput_data(data: dict):
         coverage = CoverageNeeds(
             coverage_type=data.get("coverage_type", "") if data.get("coverage_type") else None,
             coverage_level=data.get("coverage_level", "") if data.get("coverage_level") else None,
-            monthly_budget=int(data.get("monthly_budget")) if data.get("monthly_budget") else None
+            monthly_budget=safe_int(data.get("monthly_budget"))
         )
         db.add(coverage)
         db.flush()
@@ -37,8 +62,8 @@ def save_userinput_data(data: dict):
         # Save EligibilityInfo
         eligibility = EligibilityInfo(
             is_us_citizen=data.get("is_US_Citizen") if data.get("is_US_Citizen") else None,
-            eligible_for_medicaid=data.get("is_Medicaid") if data.get("is_Medicaid") else None,
-            eligible_for_medicare=data.get("is_Medicare") if data.get("is_Medicare") else None,
+            is_Mediaid=data.get("is_Mediaid") if data.get("is_Mediaid") else None,
+            is_Medicare=data.get("is_Medicare") if data.get("is_Medicare") else None,
             is_veteran=data.get("is_Veteran") if data.get("is_Veteran") else None,
             is_student=data.get("is_StudentEligible") if data.get("is_StudentEligible") else None
         )
@@ -53,27 +78,45 @@ def save_userinput_data(data: dict):
         db.add(documents)
         db.flush()
 
-        # Save PreferredProviders, PreexistingConditions, CurrentPrescriptions, RecentLifeEvents
-        for provider in data.get("providers", "").split(","):
-            if provider.strip():
-                db.add(PreferredProvider(coverage_needs_id=coverage.id, provider_name=provider.strip()))
-            else:
-                db.add(PreferredProvider(coverage_needs_id=coverage.id, provider_name=None))
-        for cond in data.get("current_conditions", "").split(","):
-            if cond.strip():
-                db.add(PreexistingCondition(coverage_needs_id=coverage.id, condition=cond.strip()))
-            else:
-                db.add(PreexistingCondition(coverage_needs_id=coverage.id, condition=None))
-        for rx in data.get("current_prescriptions", "").split(","):
-            if rx.strip():
-                db.add(CurrentPrescription(coverage_needs_id=coverage.id, prescription=rx.strip()))
-            else:
-                db.add(CurrentPrescription(coverage_needs_id=coverage.id, prescription=None))
-        for event in data.get("events", "").split(","):
-            if event.strip():
-                db.add(RecentLifeEvent(eligibility_info_id=eligibility.id, event=event.strip()))
-            else:
-                db.add(RecentLifeEvent(eligibility_info_id=eligibility.id, event=None))
+        # Save PreferredProviders
+        providers_list = data.get("providers", [])
+        if isinstance(providers_list, str):
+            providers_list = [p.strip() for p in providers_list.split(",") if p.strip()]
+        elif isinstance(providers_list, list):
+            providers_list = [p for p in providers_list if p]
+        for provider in providers_list:
+            if provider:
+                db.add(PreferredProvider(coverage_needs_id=coverage.id, provider_name=provider))
+
+        # Save PreexistingConditions
+        conditions_list = data.get("current_conditions", [])
+        if isinstance(conditions_list, str):
+            conditions_list = [c.strip() for c in conditions_list.split(",") if c.strip()]
+        elif isinstance(conditions_list, list):
+            conditions_list = [c for c in conditions_list if c]
+        for condition in conditions_list:
+            if condition:
+                db.add(PreexistingCondition(coverage_needs_id=coverage.id, condition=condition))
+
+        # Save CurrentPrescriptions
+        prescriptions_list = data.get("current_prescriptions", [])
+        if isinstance(prescriptions_list, str):
+            prescriptions_list = [p.strip() for p in prescriptions_list.split(",") if p.strip()]
+        elif isinstance(prescriptions_list, list):
+            prescriptions_list = [p for p in prescriptions_list if p]
+        for prescription in prescriptions_list:
+            if prescription:
+                db.add(CurrentPrescription(coverage_needs_id=coverage.id, prescription=prescription))
+
+        # Save RecentLifeEvents
+        events_list = data.get("events", [])
+        if isinstance(events_list, str):
+            events_list = [e.strip() for e in events_list.split(",") if e.strip()]
+        elif isinstance(events_list, list):
+            events_list = [e for e in events_list if e]
+        for event in events_list:
+            if event:
+                db.add(RecentLifeEvent(eligibility_info_id=eligibility.id, event=event))
 
         # Save UserInput (linking all fields above)
         user_input = UserInput(
@@ -100,7 +143,7 @@ def save_userprofile_data(data: dict):
         # Save PersonalInfo
         personal = PersonalInfo(
             name=data.get("name", "") if data.get("name") else None,
-            age=int(data.get("age")) if data.get("age") else None,
+            age=safe_int(data.get("age")),
             email=data.get("email", "") if data.get("email") else None,
             phone=data.get("phone", "") if data.get("phone") else None,
             address=data.get("address", "") if data.get("address") else None,
@@ -116,8 +159,8 @@ def save_userprofile_data(data: dict):
             is_employed=data.get("is_employed") if data.get("is_employed") else None,
             employer_name=data.get("employer_name", "") if data.get("employer_name") else None,
             employer_offers_insurance=data.get("is_employeroffers") if data.get("is_employeroffers") else None,
-            annual_income=int(data.get("annual_income")) if data.get("annual_income") else None,
-            household_size=int(data.get("household_size")) if data.get("household_size") else None
+            annual_income=safe_int(data.get("annual_income")),
+            household_size=safe_int(data.get("household_size"))
         )
         db.add(employment)
         db.flush()
