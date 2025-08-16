@@ -1,13 +1,21 @@
 # app/db/crud.py
 # Created by Xinrui Hou & James Zheng
 # Date: 2025-07-22
-# Updated: 2025-08-11
+# Updated: 2025-08-15
+# Description: CRUD operations for the database
+# Notes: 
+#   - Modified logic and error handling for CRUD operations
+#   - Added validation for userinput and userprofile data
+#   - Added safe_int and safe_date functions for data conversion
+#   - Modified the data validation logic for userinput and userprofile data
+#   - Removed a data validation check for personal and employment info since they are not required to exist
 from .session import SessionLocal
 from .models import (
     UserProfile, UserInput, PersonalInfo, CurrentInsurance, EmploymentInfo,
     CoverageNeeds, EligibilityInfo, Documents, PreferredProvider,
     PreexistingCondition, CurrentPrescription, RecentLifeEvent
 )
+import datetime
 
 # Safe integer conversion with error handling
 def safe_int(value):
@@ -27,10 +35,64 @@ def safe_date(value):
 
 # Validate user input data
 def validate_userinput_data(data):
-    required_fields = ["have_insurance", "coverage_type", "coverage_level"]
-    missing_fields = [field for field in required_fields if not data.get(field)]
-    if missing_fields:
-        raise ValueError(f"Missing required fields: {missing_fields}")
+    # Check if at least one of the main sections has data
+    has_insurance_data = any([
+        data.get("have_insurance") is not None,
+        data.get("insurance_provider"),
+        data.get("policy_number"),
+        data.get("start_date"),
+        data.get("end_date"),
+        data.get("source")
+    ])
+    
+    has_coverage_data = any([
+        data.get("coverage_type"),
+        data.get("coverage_level"),
+        data.get("monthly_budget"),
+        data.get("providers"),
+        data.get("current_conditions"),
+        data.get("current_prescriptions")
+    ])
+    
+    has_eligibility_data = any([
+        data.get("is_US_Citizen") is not None,
+        data.get("is_Mediaid") is not None,
+        data.get("is_Medicare") is not None,
+        data.get("is_Veteran") is not None,
+        data.get("is_StudentEligible") is not None,
+        data.get("events")
+    ])
+    
+    if not any([has_insurance_data, has_coverage_data, has_eligibility_data]):
+        raise ValueError("At least one section (insurance, coverage, or eligibility) must have data")
+    
+    return True
+
+# Validate user profile data
+def validate_userprofile_data(data):
+    # Check if at least one of the main sections has data
+    has_personal_data = any([
+        data.get("name"),
+        data.get("age"),
+        data.get("email"),
+        data.get("phone"),
+        data.get("address"),
+        data.get("location"),
+        data.get("zipcode"),
+        data.get("ssn")
+    ])
+    
+    has_employment_data = any([
+        data.get("is_employed") is not None,
+        data.get("employer_name"),
+        data.get("is_employeroffers") is not None,
+        data.get("annual_income"),
+        data.get("household_size")
+    ])
+    
+    if not any([has_personal_data, has_employment_data]):
+        raise ValueError("At least one section (personal or employment) must have data")
+    
     return True
 
 def save_userinput_data(data: dict):
@@ -40,20 +102,20 @@ def save_userinput_data(data: dict):
     try: 
          # Save CurrentInsurance
         insurance = CurrentInsurance(
-            have_insurance=data.get("have_insurance") if data.get("have_insurance") else None,
-            insurance_provider=data.get("insurance_provider", "") if data.get("insurance_provider") else None,
-            policy_number=data.get("policy_number", "") if data.get("policy_number") else None,
+            have_insurance=data.get("have_insurance") if data.get("have_insurance") is not None else None,
+            insurance_provider=data.get("insurance_provider") if data.get("insurance_provider") else None,
+            policy_number=data.get("policy_number") if data.get("policy_number") else None,
             start_date=safe_date(data.get("start_date")),
             end_date=safe_date(data.get("end_date")),
-            source=data.get("source", "") if data.get("source") else None
+            source=data.get("source") if data.get("source") else None
         )
         db.add(insurance)
         db.flush()
 
         # Save CoverageNeeds
         coverage = CoverageNeeds(
-            coverage_type=data.get("coverage_type", "") if data.get("coverage_type") else None,
-            coverage_level=data.get("coverage_level", "") if data.get("coverage_level") else None,
+            coverage_type=data.get("coverage_type") if data.get("coverage_type") else None,
+            coverage_level=data.get("coverage_level") if data.get("coverage_level") else None,
             monthly_budget=safe_int(data.get("monthly_budget"))
         )
         db.add(coverage)
@@ -61,19 +123,19 @@ def save_userinput_data(data: dict):
 
         # Save EligibilityInfo
         eligibility = EligibilityInfo(
-            is_us_citizen=data.get("is_US_Citizen") if data.get("is_US_Citizen") else None,
-            is_Mediaid=data.get("is_Mediaid") if data.get("is_Mediaid") else None,
-            is_Medicare=data.get("is_Medicare") if data.get("is_Medicare") else None,
-            is_veteran=data.get("is_Veteran") if data.get("is_Veteran") else None,
-            is_student=data.get("is_StudentEligible") if data.get("is_StudentEligible") else None
+            is_us_citizen=data.get("is_US_Citizen") if data.get("is_US_Citizen") is not None else None,
+            is_Mediaid=data.get("is_Mediaid") if data.get("is_Mediaid") is not None else None,
+            is_Medicare=data.get("is_Medicare") if data.get("is_Medicare") is not None else None,
+            is_veteran=data.get("is_Veteran") if data.get("is_Veteran") is not None else None,
+            is_student=data.get("is_StudentEligible") if data.get("is_StudentEligible") is not None else None
         )
         db.add(eligibility)
         db.flush()
 
         # Save Documents
         documents = Documents(
-            insurance_card_url=data.get("user_insurance_docs", "") if data.get("user_insurance_docs", "") else None,
-            proof_of_income_url=data.get("proof_of_income_docs", "") if data.get("proof_of_income_docs", "") else None
+            insurance_card_url=data.get("user_insurance_docs") if data.get("user_insurance_docs") else None,
+            proof_of_income_url=data.get("proof_of_income_docs") if data.get("proof_of_income_docs") else None
         )
         db.add(documents)
         db.flush()
@@ -138,27 +200,28 @@ def save_userinput_data(data: dict):
 
 def save_userprofile_data(data: dict):
     db = SessionLocal()
+    validate_userprofile_data(data)
     # UserProfile Data
     try:
         # Save PersonalInfo
         personal = PersonalInfo(
-            name=data.get("name", "") if data.get("name") else None,
+            name=data.get("name") if data.get("name") else None,
             age=safe_int(data.get("age")),
-            email=data.get("email", "") if data.get("email") else None,
-            phone=data.get("phone", "") if data.get("phone") else None,
-            address=data.get("address", "") if data.get("address") else None,
-            location=data.get("location", "") if data.get("location") else None,
-            zip_code=data.get("zipcode", "") if data.get("zipcode") else None,
-            ssn=data.get("ssn", "") if data.get("ssn") else None
+            email=data.get("email") if data.get("email") else None,
+            phone=data.get("phone") if data.get("phone") else None,
+            address=data.get("address") if data.get("address") else None,
+            location=data.get("location") if data.get("location") else None,
+            zip_code=data.get("zipcode") if data.get("zipcode") else None,
+            ssn=data.get("ssn") if data.get("ssn") else None
         )
         db.add(personal)
         db.flush()
 
         # Save EmploymentInfo
         employment = EmploymentInfo(
-            is_employed=data.get("is_employed") if data.get("is_employed") else None,
-            employer_name=data.get("employer_name", "") if data.get("employer_name") else None,
-            employer_offers_insurance=data.get("is_employeroffers") if data.get("is_employeroffers") else None,
+            is_employed=data.get("is_employed") if data.get("is_employed") is not None else None,
+            employer_name=data.get("employer_name") if data.get("employer_name") else None,
+            employer_offers_insurance=data.get("is_employeroffers") if data.get("is_employeroffers") is not None else None,
             annual_income=safe_int(data.get("annual_income")),
             household_size=safe_int(data.get("household_size"))
         )

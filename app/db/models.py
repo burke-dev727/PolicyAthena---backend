@@ -5,13 +5,10 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, String, Integer, Boolean, Date, Text, ForeignKey, TIMESTAMP, text
 from sqlalchemy.orm import relationship
 from sqlalchemy import func
-
 import uuid
 
 Base = declarative_base()
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
-engine = create_engine(DATABASE_URL)
 
 class PersonalInfo(Base):
     __tablename__ = "personal_info"
@@ -28,8 +25,8 @@ class PersonalInfo(Base):
 class CurrentInsurance(Base):
     __tablename__ = "current_insurance"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    has_insurance = Column(Boolean, default=False, nullable=False)
-    provider_name = Column(String(255))
+    have_insurance = Column(Boolean, default=False, nullable=False)
+    insurance_provider = Column(String(255))
     policy_number = Column(String(100))
     start_date = Column(Date)
     end_date = Column(Date)
@@ -58,8 +55,8 @@ class EligibilityInfo(Base):
     __tablename__ = "eligibility_info"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     is_us_citizen = Column(Boolean, default=False, nullable=False)
-    eligible_for_medicaid = Column(Boolean, default=False, nullable=False)
-    eligible_for_medicare = Column(Boolean, default=False, nullable=False)
+    is_Mediaid = Column(Boolean, default=False, nullable=False)
+    is_Medicare = Column(Boolean, default=False, nullable=False)
     is_student = Column(Boolean, default=False, nullable=False)
     is_veteran = Column(Boolean, default=False, nullable=False)
 
@@ -96,8 +93,11 @@ class RecentLifeEvent(Base):
 class UserProfile(Base):
     __tablename__ = "user_profiles"
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
+    personal_info_id = Column(String, ForeignKey('personal_info.id')) 
+    employment_info_id = Column(String, ForeignKey('employment_info.id'))
     personal_info = relationship("PersonalInfo")
     employment_info = relationship("EmploymentInfo")
+    
 
 class UserInput(Base):
     __tablename__ = "user_inputs"
@@ -107,3 +107,9 @@ class UserInput(Base):
     eligibility_info_id = Column(String, ForeignKey('eligibility_info.id'))
     documents_id = Column(String, ForeignKey('documents.id'))
     created_at = Column(TIMESTAMP, server_default=func.now())
+    
+    # Add relationships
+    current_insurance = relationship("CurrentInsurance")
+    coverage_needs = relationship("CoverageNeeds")
+    eligibility_info = relationship("EligibilityInfo")
+    documents = relationship("Documents")

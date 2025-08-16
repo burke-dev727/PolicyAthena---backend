@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routers import (
     input_route,
     profile_route,
@@ -10,6 +11,15 @@ from app.routers import (
 from app.routers import contact_route
 
 app = FastAPI(title="PolicyAthena Backend")
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Include each agent's router
 app.include_router(input_route.router)

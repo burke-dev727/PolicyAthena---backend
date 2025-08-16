@@ -1,0 +1,14 @@
+# Database Configuration
+# Replace with your actual database connection string
+DATABASE_URL=postgresql://username:password@localhost:5432/policyathena
+
+# Alternative SQLite for development
+# DATABASE_URL=sqlite:///./policyathena.db
+
+# Server Configuration
+HOST=0.0.0.0
+PORT=8000
+
+# Environment
+ENVIRONMENT=development
+DEBUG=true
