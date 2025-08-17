@@ -16,6 +16,10 @@ from .models import (
     PreexistingCondition, CurrentPrescription, RecentLifeEvent
 )
 import datetime
+import logging
+
+# Set up logging
+logger = logging.getLogger(__name__)
 
 # Safe integer conversion with error handling
 def safe_int(value):
@@ -97,10 +101,14 @@ def validate_userprofile_data(data):
 
 def save_userinput_data(data: dict):
     db = SessionLocal()
+    logger.info("Starting UserInput data save operation...")
     validate_userinput_data(data)
+    logger.info("UserInput data validation passed")
+    
     # UserInput Data
     try: 
          # Save CurrentInsurance
+        logger.info("Creating CurrentInsurance record...")
         insurance = CurrentInsurance(
             have_insurance=data.get("have_insurance") if data.get("have_insurance") is not None else None,
             insurance_provider=data.get("insurance_provider") if data.get("insurance_provider") else None,
@@ -111,8 +119,10 @@ def save_userinput_data(data: dict):
         )
         db.add(insurance)
         db.flush()
+        logger.info(f"CurrentInsurance created with ID: {insurance.id}")
 
         # Save CoverageNeeds
+        logger.info("Creating CoverageNeeds record...")
         coverage = CoverageNeeds(
             coverage_type=data.get("coverage_type") if data.get("coverage_type") else None,
             coverage_level=data.get("coverage_level") if data.get("coverage_level") else None,
@@ -120,8 +130,10 @@ def save_userinput_data(data: dict):
         )
         db.add(coverage)
         db.flush()
+        logger.info(f"CoverageNeeds created with ID: {coverage.id}")
 
         # Save EligibilityInfo
+        logger.info("Creating EligibilityInfo record...")
         eligibility = EligibilityInfo(
             is_us_citizen=data.get("is_US_Citizen") if data.get("is_US_Citizen") is not None else None,
             is_Mediaid=data.get("is_Mediaid") if data.get("is_Mediaid") is not None else None,
@@ -131,14 +143,17 @@ def save_userinput_data(data: dict):
         )
         db.add(eligibility)
         db.flush()
+        logger.info(f"EligibilityInfo created with ID: {eligibility.id}")
 
         # Save Documents
+        logger.info("Creating Documents record...")
         documents = Documents(
             insurance_card_url=data.get("user_insurance_docs") if data.get("user_insurance_docs") else None,
             proof_of_income_url=data.get("proof_of_income_docs") if data.get("proof_of_income_docs") else None
         )
         db.add(documents)
         db.flush()
+        logger.info(f"Documents created with ID: {documents.id}")
 
         # Save PreferredProviders
         providers_list = data.get("providers", [])
@@ -146,9 +161,13 @@ def save_userinput_data(data: dict):
             providers_list = [p.strip() for p in providers_list.split(",") if p.strip()]
         elif isinstance(providers_list, list):
             providers_list = [p for p in providers_list if p]
-        for provider in providers_list:
-            if provider:
-                db.add(PreferredProvider(coverage_needs_id=coverage.id, provider_name=provider))
+        
+        if providers_list:
+            logger.info(f"Creating {len(providers_list)} PreferredProvider records...")
+            for provider in providers_list:
+                if provider:
+                    db.add(PreferredProvider(coverage_needs_id=coverage.id, provider_name=provider))
+            logger.info("PreferredProviders created")
 
         # Save PreexistingConditions
         conditions_list = data.get("current_conditions", [])
@@ -156,9 +175,13 @@ def save_userinput_data(data: dict):
             conditions_list = [c.strip() for c in conditions_list.split(",") if c.strip()]
         elif isinstance(conditions_list, list):
             conditions_list = [c for c in conditions_list if c]
-        for condition in conditions_list:
-            if condition:
-                db.add(PreexistingCondition(coverage_needs_id=coverage.id, condition=condition))
+        
+        if conditions_list:
+            logger.info(f"Creating {len(conditions_list)} PreexistingCondition records...")
+            for condition in conditions_list:
+                if condition:
+                    db.add(PreexistingCondition(coverage_needs_id=coverage.id, condition=condition))
+            logger.info("PreexistingConditions created")
 
         # Save CurrentPrescriptions
         prescriptions_list = data.get("current_prescriptions", [])
@@ -166,9 +189,13 @@ def save_userinput_data(data: dict):
             prescriptions_list = [p.strip() for p in prescriptions_list.split(",") if p.strip()]
         elif isinstance(prescriptions_list, list):
             prescriptions_list = [p for p in prescriptions_list if p]
-        for prescription in prescriptions_list:
-            if prescription:
-                db.add(CurrentPrescription(coverage_needs_id=coverage.id, prescription=prescription))
+        
+        if prescriptions_list:
+            logger.info(f"Creating {len(prescriptions_list)} CurrentPrescription records...")
+            for prescription in prescriptions_list:
+                if prescription:
+                    db.add(CurrentPrescription(coverage_needs_id=coverage.id, prescription=prescription))
+            logger.info("CurrentPrescriptions created")
 
         # Save RecentLifeEvents
         events_list = data.get("events", [])
@@ -176,11 +203,16 @@ def save_userinput_data(data: dict):
             events_list = [e.strip() for e in events_list.split(",") if e.strip()]
         elif isinstance(events_list, list):
             events_list = [e for e in events_list if e]
-        for event in events_list:
-            if event:
-                db.add(RecentLifeEvent(eligibility_info_id=eligibility.id, event=event))
+        
+        if events_list:
+            logger.info(f"Creating {len(events_list)} RecentLifeEvent records...")
+            for event in events_list:
+                if event:
+                    db.add(RecentLifeEvent(eligibility_info_id=eligibility.id, event=event))
+            logger.info("RecentLifeEvents created")
 
         # Save UserInput (linking all fields above)
+        logger.info("Creating UserInput record to link all data...")
         user_input = UserInput(
             current_insurance_id=insurance.id,
             coverage_needs_id=coverage.id,
@@ -191,8 +223,10 @@ def save_userinput_data(data: dict):
         db.add(user_input)
         db.commit()
         db.refresh(user_input)
+        logger.info(f"UserInput created successfully with ID: {user_input.id}")
         return user_input.id
     except Exception as e:
+        logger.error(f"Error saving UserInput data: {e}")
         db.rollback()
         raise e
     finally:
@@ -200,10 +234,14 @@ def save_userinput_data(data: dict):
 
 def save_userprofile_data(data: dict):
     db = SessionLocal()
+    logger.info("Starting UserProfile data save operation...")
     validate_userprofile_data(data)
+    logger.info("UserProfile data validation passed")
+    
     # UserProfile Data
     try:
         # Save PersonalInfo
+        logger.info("Creating PersonalInfo record...")
         personal = PersonalInfo(
             name=data.get("name") if data.get("name") else None,
             age=safe_int(data.get("age")),
@@ -216,8 +254,10 @@ def save_userprofile_data(data: dict):
         )
         db.add(personal)
         db.flush()
+        logger.info(f"PersonalInfo created with ID: {personal.id}")
 
         # Save EmploymentInfo
+        logger.info("Creating EmploymentInfo record...")
         employment = EmploymentInfo(
             is_employed=data.get("is_employed") if data.get("is_employed") is not None else None,
             employer_name=data.get("employer_name") if data.get("employer_name") else None,
@@ -227,8 +267,10 @@ def save_userprofile_data(data: dict):
         )
         db.add(employment)
         db.flush()
+        logger.info(f"EmploymentInfo created with ID: {employment.id}")
 
         # Save UserProfile (linking personal and employment info)
+        logger.info("Creating UserProfile record to link personal and employment info...")
         user_profile = UserProfile(
             personal_info_id=personal.id,
             employment_info_id=employment.id
@@ -236,8 +278,10 @@ def save_userprofile_data(data: dict):
         db.add(user_profile)
         db.commit()
         db.refresh(user_profile)
+        logger.info(f"UserProfile created successfully with ID: {user_profile.id}")
         return user_profile.id
     except Exception as e:
+        logger.error(f"Error saving UserProfile data: {e}")
         db.rollback()
         raise e
     finally:
