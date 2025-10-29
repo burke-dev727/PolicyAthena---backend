@@ -4,6 +4,8 @@
 # Updated: Added CORS middleware for React frontend integration
 #          Restored all router endpoints for complete API functionality
 
+import os
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import (
@@ -15,6 +17,9 @@ from app.routers import (
     explanation_route,
     orchestrator_route
 )
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = FastAPI(title="PolicyAthena Backend", version="1.0.0")
 app.add_middleware(

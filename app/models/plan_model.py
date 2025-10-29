@@ -1,6 +1,5 @@
-from typing import List
+from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
-from typing import List, Optional
 
 class PageBlock(BaseModel):
     page_num: int
@@ -10,3 +9,4 @@ class PlanData(BaseModel):
     name: str
     text_blocks: List[PageBlock]
     extracted_text_path: Optional[str] = None
+    extracted_data: Optional[Dict[str, Any]] = None  # AI-extracted structured plan data

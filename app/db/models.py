@@ -8,20 +8,21 @@ import uuid
 Base = declarative_base()
 
 class UserProfile(Base):
-    __tablename__ = "user_profiles"
-    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    # Basic profile fields
-    first_name = Column(String(100))
-    last_name = Column(String(100))
-    age = Column(Integer)
-    email = Column(String(255))
-    phone = Column(String(50))
-    address = Column(String(255))
-    city = Column(String(100))
-    state = Column(String(100))
-    zip_code = Column(String(20))
-    # Additional profile fields can be added here
-    created_at = Column(TIMESTAMP, server_default=text("timezone('utc', now())"))
+    __tablename__ = "user_profile"  # Match actual table name
+    id = Column(BigInteger, primary_key=True, autoincrement=True)  # Match BIGINT GENERATED ALWAYS AS IDENTITY
+    user_id = Column(String, nullable=True)  # Optional user ID without foreign key constraint
+    name = Column(Text)  # Match database column
+    age = Column(Text)  # Match database column (TEXT, not INTEGER)
+    email = Column(Text)  # Match database column
+    street_address = Column(Text)  # Match database column name
+    city = Column(Text)  # Match database column
+    state = Column(Text)  # Match database column
+    zipcode = Column(Text)  # Match database column name
+    is_employed = Column(Boolean, default=False)  # Match database column
+    employer_name = Column(Text)  # Match database column
+    is_employeroffers = Column(Boolean, default=False)  # Match database column name
+    annual_income = Column(Text)  # Match database column
+    household_size = Column(Text)  # Match database column
 
 class UserInput(Base):
     __tablename__ = "user_input"

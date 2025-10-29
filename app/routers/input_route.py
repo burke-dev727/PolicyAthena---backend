@@ -56,14 +56,15 @@ async def process_user_profile(data: dict):
 @router.post("/userProfile")
 async def create_user_profile(profile_data: dict):
     """
-    Create a new user profile with basic personal information
+    Create a new user profile with personal, employment, and financial information
     
     Endpoint: POST /userInput/userProfile
     
-    This endpoint creates basic user profile records containing:
-    - Personal identification (name, age)
-    - Contact information (email, phone)
-    - Address details (street, city, state, zip)
+    This endpoint creates user profile records containing:
+    - Personal identification (name, age, email)
+    - Address details (street_address, city, state, zipcode)
+    - Employment information (is_employed, employer_name, is_employeroffers)
+    - Financial details (annual_income, household_size)
     
     Args:
         profile_data (dict): User profile information from frontend
@@ -73,16 +74,25 @@ async def create_user_profile(profile_data: dict):
         
     Example Request Body:
         {
-            "first_name": "John",
-            "last_name": "Doe",
-            "age": 30,
-            "email": "john.doe@example.com",
-            "phone": "555-123-4567",
-            "address": "123 Main St",
-            "city": "Anytown",
-            "state": "CA",
-            "zip_code": "12345"
+            "name": "Miaoli",
+            "age": "28",
+            "email": "hermioneburke727@gmail.com",
+            "phone": "",
+            "address": "336 Flower st",
+            "location": "New York",
+            "zipcode": "75189",
+            "is_employed": false,
+            "employer_name": "",
+            "is_employeroffers": false,
+            "annual_income": "",
+            "household_size": ""
         }
+        
+    Note:
+        - phone is not stored in database but preserved in response
+        - location is parsed into city and state fields
+        - age is stored as TEXT to match database schema
+        - Returns BIGINT ID (not UUID) to match database schema
     """
     try:
         profile_id = save_user_profile(profile_data)

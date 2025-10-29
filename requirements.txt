@@ -1,9 +1,8 @@
 fastapi
 uvicorn
-openai
+openai==1.47.0
 pydantic
 requests
-openai==1.47.0
 pdfplumber
 python-multipart
 
