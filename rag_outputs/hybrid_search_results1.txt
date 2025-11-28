@@ -1,0 +1,60 @@
+
+# Policy Comparison Results
+
+## Query: which policy has cheaper copay
+## Search Method: hybrid_search
+## Total Results: 10
+
+
+## Policy: policy2.pdf (ID: 1)
+
+### Top Results:
+
+**Result 1** (Score: 2.282)
+- Text: Do you need a referral to see a specialist? Yes. This plan will pay some or all of the costs to see a specialist for covered services but only if you have a referral before you see the specialist. For...
+- Key Terms: specialist, coinsurance, limitation, deductible, copay
+- Financial Info: []
+
+**Result 2** (Score: 1.074)
+- Text: For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will ...
+- Key Terms: provider, limitation
+- Financial Info: []
+
+**Result 3** (Score: 0.869)
+- Text: For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will ...
+- Key Terms: coinsurance, 50%, provider, limitation
+- Financial Info: []
+
+**Result 4** (Score: 0.837)
+- Text: Your actual costs will be different depending on the actual care you receive, the prices your providers charge, and many other factors. Focus on the cost-sharing amounts (deductibles, copayments and c...
+- Key Terms: provider, coinsurance, deductible, copay, coverage
+- Financial Info: []
+
+## Policy: policy1.pdf (ID: 0)
+
+### Top Results:
+
+**Result 1** (Score: 1.972)
+- Text: If this Plan has any Calendar Year Deductible(s), Covered Services subject to that Deductible are identified with a check mark () in the Benefits chart above. 3 Using Participating Providers: Particip...
+- Key Terms: provider, coinsurance, deductible, benefit, copay
+- Financial Info: []
+
+**Result 2** (Score: 1.119)
+- Text: 9 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month in which the Member turns 19. When using a Participating Provider3 CYD2 applies Low vision devices 35% O...
+- Key Terms: provider, limitation, benefit, exclusion, 35%
+- Financial Info: []
+
+**Result 3** (Score: 0.961)
+- Text: Contraceptive Drugs and devices $0 Tier 1 Drugs $10prescription Tier 2 Drugs $50prescription Tier 3 Drugs $60prescription Tier 4 Drugs 20% up to $500prescription 7 Pediatric Benefits Your payment Pedi...
+- Key Terms: 20%, $0, $50, $500, $60
+- Financial Info: ['$0', '$50', '$500']
+
+**Result 4** (Score: 0.862)
+- Text: 9 Pediatric Dental Coverage: Pediatric dental Benefits are provided through Blue Shields Dental Plan Administrator (DPA). Orthodontic Covered Services. The Copayment or Coinsurance for Medically Neces...
+- Key Terms: coinsurance, coverage, copay, benefit
+- Financial Info: []
+
+**Result 5** (Score: 0.847)
+- Text: There is a maximum of two follow up visits. Standard lenses $0 Non-standard lenses All charges above $60 8 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month...
+- Key Terms: benefit, $0, $60, provider
+- Financial Info: ['$60', '$0']

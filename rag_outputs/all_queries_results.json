@@ -1,0 +1,265 @@
+{
+  "coverage for pregnancy and diabetes": {
+    "query": "coverage for pregnancy and diabetes",
+    "method": "hybrid_search_with_rerank",
+    "total_results": 9,
+    "policies": {
+      "0": {
+        "policy_name": "policy1.pdf",
+        "results": [
+          {
+            "rank": 6,
+            "chunk_id": 7,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "$0 Tubal ligation $0 Vasectomy $0 Medical nutrition therapy, not related to diabetes $0 Pregnancy and maternity care Physician office visits: prenatal and initial postnatal $0 Abortion and abortion-related services $0 3 Benefits5 Your payment When using a Participating Provider3 CYD2 applies Emergency Services Emergency room services $250visit If admitted to the Hospital, this payment for emergency room services does not apply.",
+            "embedding_text": "$0 Tubal ligation $0 Vasectomy $0 Medical nutrition therapy, not related to diabetes $0 Pregnancy and maternity care Physician office visits: prenatal and initial postnatal $0 Abortion and abortion-related services $0 3 Benefits5 Your payment When using a Participating Provider3 CYD2 applies Emergency Services Emergency room services $250visit If admitted to the Hospital, this payment for emergency room services does not apply. Keywords: provider, $0, emergency, benefit, $250 Costs: $0, $250",
+            "semantic_score": 0.45473337173461914,
+            "metadata": {
+              "char_count": 432,
+              "word_count": 62,
+              "key_terms": [
+                "provider",
+                "$0",
+                "emergency",
+                "benefit",
+                "$250"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$0",
+                  "$250"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "$0",
+                "emergency",
+                "benefit",
+                "$250"
+              ]
+            },
+            "hybrid_score": 2.946986117523741,
+            "keyword_score": 8.762242524365023,
+            "reranked_score": 1.5787944470094966,
+            "query_coverage": 0.6666666666666666,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 1
+          },
+          {
+            "rank": 4,
+            "chunk_id": 18,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "Other services and supplies Diabetes care services Devices, equipment, and supplies 50% Self-management training $0 Medical nutrition therapy $0 Dialysis services $0 PKU product formulas and special food products $0 Allergy serum billed separately from an office visit 50% Mental Health and Substance Use Disorder Benefits Your payment Mental health and substance use disorder Benefits are provided through Blue Shields Mental Health Service Administrator (MHSA).",
+            "embedding_text": "Other services and supplies Diabetes care services Devices, equipment, and supplies 50% Self-management training $0 Medical nutrition therapy $0 Dialysis services $0 PKU product formulas and special food products $0 Allergy serum billed separately from an office visit 50% Mental Health and Substance Use Disorder Benefits Your payment Mental health and substance use disorder Benefits are provided through Blue Shields Mental Health Service Administrator (MHSA). Keywords: benefit, $0, 50% Costs: $0",
+            "keyword_score": 4.88915144269779,
+            "metadata": {
+              "char_count": 464,
+              "word_count": 65,
+              "key_terms": [
+                "benefit",
+                "$0",
+                "50%"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$0"
+                ],
+                "percentages": [
+                  "50%"
+                ],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "benefit",
+                "$0",
+                "50%"
+              ]
+            },
+            "semantic_score": 0,
+            "hybrid_score": 1.466745432809337,
+            "reranked_score": 0.8866981731237348,
+            "query_coverage": 0.3333333333333333,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 6
+          },
+          {
+            "rank": 5,
+            "chunk_id": 35,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "You will continue to pay all charges for services that are not covered, charges above the Allowed Charges, and charges for services above any Benefit maximum. Family coverage has an individual OOPM within the Family OOPM. This means that the OOPM will be met for an individual with Family coverage who meets the individual OOPM prior to the Family meeting the Family OOPM within a Calendar Year.",
+            "embedding_text": "You will continue to pay all charges for services that are not covered, charges above the Allowed Charges, and charges for services above any Benefit maximum. Family coverage has an individual OOPM within the Family OOPM. This means that the OOPM will be met for an individual with Family coverage who meets the individual OOPM prior to the Family meeting the Family OOPM within a Calendar Year. Keywords: benefit, coverage",
+            "keyword_score": 4.298206170201293,
+            "metadata": {
+              "char_count": 396,
+              "word_count": 67,
+              "key_terms": [
+                "benefit",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "benefit",
+                "coverage"
+              ]
+            },
+            "semantic_score": 0,
+            "hybrid_score": 1.289461851060388,
+            "reranked_score": 0.8157847404241552,
+            "query_coverage": 0.3333333333333333,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 8
+          }
+        ]
+      },
+      "1": {
+        "policy_name": "policy2.pdf",
+        "results": [
+          {
+            "rank": 7,
+            "chunk_id": 80,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Abortion (Except for a pregnancy that, as certified by a physician, places the woman in danger of death) Acupuncture Bariatric surgery Cosmetic surgery (Except when medically necessary) Dental care (Adult and child) Infertility treatment (Diagnosis and treatment covered; in vitro not covered) Long-term care Non-emergency care when traveling outside the U.S. Private-duty nursing (Unless medically necessary) Routine eye care (Adult) Routine foot care (Except when medically necessary) Weight loss programs Other Covered Services (Limitations may apply to these services.",
+            "embedding_text": "Abortion (Except for a pregnancy that, as certified by a physician, places the woman in danger of death) Acupuncture Bariatric surgery Cosmetic surgery (Except when medically necessary) Dental care (Adult and child) Infertility treatment (Diagnosis and treatment covered; in vitro not covered) Long-term care Non-emergency care when traveling outside the U.S. Private-duty nursing (Unless medically necessary) Routine eye care (Adult) Routine foot care (Except when medically necessary) Weight loss programs Other Covered Services (Limitations may apply to these services. Keywords: emergency, limitation",
+            "semantic_score": 0.4542196989059448,
+            "metadata": {
+              "char_count": 573,
+              "word_count": 79,
+              "key_terms": [
+                "emergency",
+                "limitation"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "emergency",
+                "limitation"
+              ]
+            },
+            "hybrid_score": 1.7963244070780722,
+            "keyword_score": 4.9279020594797025,
+            "reranked_score": 1.0185297628312289,
+            "query_coverage": 0.3333333333333333,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 2
+          },
+          {
+            "rank": 1,
+            "chunk_id": 72,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Preauthorization may also be required; see your benefit booklet (Behavioral Health Services) for details. If you are pregnant Office visits Primary Care: $50initial visit; deductible does not apply Specialist: $100initial visit; deductible does not apply Not Covered Copayment applies to first prenatal visit (per pregnancy). Cost sharing does not apply for preventive services. Depending on the type of services, a copayment, coinsurance, or deductible may apply.",
+            "embedding_text": "Preauthorization may also be required; see your benefit booklet (Behavioral Health Services) for details. If you are pregnant Office visits Primary Care: $50initial visit; deductible does not apply Specialist: $100initial visit; deductible does not apply Not Covered Copayment applies to first prenatal visit (per pregnancy). Cost sharing does not apply for preventive services. Depending on the type of services, a copayment, coinsurance, or deductible may apply. Keywords: specialist, $100, coinsurance, $50, preauthorization, primary care, deductible, benefit, copay Costs: $100, $50",
+            "semantic_score": 0.5821762084960938,
+            "metadata": {
+              "char_count": 465,
+              "word_count": 66,
+              "key_terms": [
+                "specialist",
+                "$100",
+                "coinsurance",
+                "$50",
+                "preauthorization",
+                "primary care",
+                "deductible",
+                "benefit",
+                "copay"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$100",
+                  "$50"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "specialist",
+                "$100",
+                "coinsurance",
+                "$50",
+                "preauthorization",
+                "primary care",
+                "deductible",
+                "benefit",
+                "copay"
+              ]
+            },
+            "hybrid_score": 1.6878689159932823,
+            "keyword_score": 4.267818566820055,
+            "reranked_score": 0.9751475663973129,
+            "query_coverage": 0.3333333333333333,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 3
+          },
+          {
+            "rank": 8,
+            "chunk_id": 53,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "The SBC shows you how you and the plan would share the cost for covered health care services. NOTE: Information about the cost of this plan (called the premium) will be provided separately. This is only a summary. For more information about your coverage, or to get a copy of the complete terms of coverage, visit www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf or by calling 1-888-697-0683.",
+            "embedding_text": "The SBC shows you how you and the plan would share the cost for covered health care services. NOTE: Information about the cost of this plan (called the premium) will be provided separately. This is only a summary. For more information about your coverage, or to get a copy of the complete terms of coverage, visit www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf or by calling 1-888-697-0683. Keywords: premium, coverage",
+            "semantic_score": 0.45330798625946045,
+            "metadata": {
+              "char_count": 392,
+              "word_count": 61,
+              "key_terms": [
+                "premium",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "premium",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 1.5455657560566534,
+            "keyword_score": 4.09416721891677,
+            "reranked_score": 0.9182263024226613,
+            "query_coverage": 0.3333333333333333,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 4
+          }
+        ]
+      }
+    },
+    "search_metadata": {
+      "top_k": 3,
+      "alpha": 0.7,
+      "rerank_weights": {
+        "original_score": 0.4,
+        "query_coverage": 0.3,
+        "financial_relevance": 0.2,
+        "policy_specificity": 0.1
+      }
+    }
+  }
+}

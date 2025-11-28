@@ -1,0 +1,1114 @@
+{
+  "what is the deductible for each policy": {
+    "query": "what is the deductible for each policy",
+    "method": "hybrid_search_with_rerank",
+    "total_results": 9,
+    "policies": {
+      "1": {
+        "policy_name": "policy2.pdf",
+        "results": [
+          {
+            "rank": 15,
+            "chunk_id": 64,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) If you need drugs to treat your illness or condition More information about prescription drug coverage is available at www.bcbstx.comrx25 4T Generic drugs Retail: Preferred Participating - $25prescription Participating - $25prescription Mail - $75prescription; deductible does not apply Not Covered Limited to a 30-day supply at retail (or a 90-day supply at a network of select retail pharmacies).",
+            "embedding_text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) If you need drugs to treat your illness or condition More information about prescription drug coverage is available at www.bcbstx.comrx25 4T Generic drugs Retail: Preferred Participating - $25prescription Participating - $25prescription Mail - $75prescription; deductible does not apply Not Covered Limited to a 30-day supply at retail (or a 90-day supply at a network of select retail pharmacies). Keywords: provider, network, $25, generic, limitation, deductible, prescription, $75, coverage Costs: $25, $75",
+            "semantic_score": 0.4279419779777527,
+            "metadata": {
+              "char_count": 757,
+              "word_count": 105,
+              "key_terms": [
+                "provider",
+                "network",
+                "$25",
+                "generic",
+                "limitation",
+                "deductible",
+                "prescription",
+                "$75",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$25",
+                  "$75"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "network",
+                "$25",
+                "generic",
+                "limitation",
+                "deductible",
+                "prescription",
+                "$75",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 2.4158501420655254,
+            "keyword_score": 7.054302524936994,
+            "reranked_score": 1.5663400568262102,
+            "query_coverage": 1.0,
+            "financial_relevance": 1.0,
+            "policy_specificity": 1.0,
+            "final_rank": 1
+          },
+          {
+            "rank": 13,
+            "chunk_id": 60,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Do you need a referral to see a specialist? Yes. This plan will pay some or all of the costs to see a specialist for covered services but only if you have a referral before you see the specialist. For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 All copayment and coinsurance costs shown in this chart are after your deductible has been met, if a deductible applies.",
+            "embedding_text": "Do you need a referral to see a specialist? Yes. This plan will pay some or all of the costs to see a specialist for covered services but only if you have a referral before you see the specialist. For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 All copayment and coinsurance costs shown in this chart are after your deductible has been met, if a deductible applies. Keywords: specialist, coinsurance, limitation, deductible, copay",
+            "semantic_score": 0.4405592083930969,
+            "metadata": {
+              "char_count": 461,
+              "word_count": 76,
+              "key_terms": [
+                "specialist",
+                "coinsurance",
+                "limitation",
+                "deductible",
+                "copay"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "specialist",
+                "coinsurance",
+                "limitation",
+                "deductible",
+                "copay"
+              ]
+            },
+            "hybrid_score": 2.314385304461142,
+            "keyword_score": 6.686646195286581,
+            "reranked_score": 1.3857541217844571,
+            "query_coverage": 1.0,
+            "financial_relevance": 0.3,
+            "policy_specificity": 1.0,
+            "final_rank": 4
+          },
+          {
+            "rank": 2,
+            "chunk_id": 54,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "For general definitions of common terms, such as allowed amount, balance billing, coinsurance, copayment, deductible, provider, or other underlined terms, see the Glossary. You can view the Glossary at www.healthcare.govsbc-glossary or call 1-855-756-4448 to request a copy. Important Questions Answers Why This Matters: What is the overall deductible? $7,500 Individual$15,000 Family Generally, you must pay all of the costs from providers up to the deductible amount before this plan begins to pay.",
+            "embedding_text": "For general definitions of common terms, such as allowed amount, balance billing, coinsurance, copayment, deductible, provider, or other underlined terms, see the Glossary. You can view the Glossary at www.healthcare.govsbc-glossary or call 1-855-756-4448 to request a copy. Important Questions Answers Why This Matters: What is the overall deductible? $7,500 Individual$15,000 Family Generally, you must pay all of the costs from providers up to the deductible amount before this plan begins to pay. Keywords: provider, coinsurance, $7, $15, deductible, copay Costs: $7, $15",
+            "semantic_score": 0.5431535243988037,
+            "metadata": {
+              "char_count": 501,
+              "word_count": 72,
+              "key_terms": [
+                "provider",
+                "coinsurance",
+                "$7",
+                "$15",
+                "deductible",
+                "copay"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$7",
+                  "$15"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "coinsurance",
+                "$7",
+                "$15",
+                "deductible",
+                "copay"
+              ]
+            },
+            "hybrid_score": 2.2847894711128665,
+            "keyword_score": 6.348606680112345,
+            "reranked_score": 1.3639157884451467,
+            "query_coverage": 0.5,
+            "financial_relevance": 1.0,
+            "policy_specificity": 1.0,
+            "final_rank": 5
+          }
+        ]
+      },
+      "0": {
+        "policy_name": "policy1.pdf",
+        "results": [
+          {
+            "rank": 3,
+            "chunk_id": 3,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "When using a Participating Provider3 Calendar Year medical Deductible Individual coverage $0 Family coverage $0: individual $0: Family Calendar Year pharmacy Deductible Individual coverage Family coverage $0 $0: individual $0: Family Calendar Year Out-of-Pocket Maximum4 An Out-of-Pocket Maximum is the most a Member will pay for Covered Services each Calendar Year. Any exceptions are listed in the EOC.",
+            "embedding_text": "When using a Participating Provider3 Calendar Year medical Deductible Individual coverage $0 Family coverage $0: individual $0: Family Calendar Year pharmacy Deductible Individual coverage Family coverage $0 $0: individual $0: Family Calendar Year Out-of-Pocket Maximum4 An Out-of-Pocket Maximum is the most a Member will pay for Covered Services each Calendar Year. Any exceptions are listed in the EOC. Keywords: provider, $0, out-of-pocket, deductible, coverage Costs: $0",
+            "semantic_score": 0.5319520235061646,
+            "metadata": {
+              "char_count": 405,
+              "word_count": 58,
+              "key_terms": [
+                "provider",
+                "$0",
+                "out-of-pocket",
+                "deductible",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$0"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "$0",
+                "out-of-pocket",
+                "deductible",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 2.4044706241138254,
+            "keyword_score": 6.773680692198367,
+            "reranked_score": 1.4117882496455303,
+            "query_coverage": 0.5,
+            "financial_relevance": 1.0,
+            "policy_specificity": 1.0,
+            "final_rank": 2
+          },
+          {
+            "rank": 7,
+            "chunk_id": 31,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "You can request a copy of the EOC at any time. Capitalized terms are defined in the EOC. Refer to the EOC for an explanation of the terms used in this Summary of Benefits. 2 Calendar Year Deductible (CYD): Calendar Year Deductible explained. A Calendar Year Deductible is the amount you pay each Calendar Year before Blue Shield pays for Covered Services under the Plan.",
+            "embedding_text": "You can request a copy of the EOC at any time. Capitalized terms are defined in the EOC. Refer to the EOC for an explanation of the terms used in this Summary of Benefits. 2 Calendar Year Deductible (CYD): Calendar Year Deductible explained. A Calendar Year Deductible is the amount you pay each Calendar Year before Blue Shield pays for Covered Services under the Plan. Keywords: benefit, deductible",
+            "semantic_score": 0.48172491788864136,
+            "metadata": {
+              "char_count": 371,
+              "word_count": 65,
+              "key_terms": [
+                "benefit",
+                "deductible"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "benefit",
+                "deductible"
+              ]
+            },
+            "hybrid_score": 2.7133843746904107,
+            "keyword_score": 7.9205897738945374,
+            "reranked_score": 1.3953537498761643,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.3,
+            "policy_specificity": 1.0,
+            "final_rank": 3
+          },
+          {
+            "rank": 2,
+            "chunk_id": 2,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "Pharmacy Network: Rx Spectrum Drug Formulary: Standard Formulary Calendar Year Deductibles (CYD)2 A Calendar Year Deductible (CYD) is the amount a Member pays each Calendar Year before Blue Shield pays for Covered Services under the Plan.",
+            "embedding_text": "Pharmacy Network: Rx Spectrum Drug Formulary: Standard Formulary Calendar Year Deductibles (CYD)2 A Calendar Year Deductible (CYD) is the amount a Member pays each Calendar Year before Blue Shield pays for Covered Services under the Plan. Keywords: network, formulary, deductible",
+            "keyword_score": 7.888064372049211,
+            "metadata": {
+              "char_count": 239,
+              "word_count": 36,
+              "key_terms": [
+                "network",
+                "formulary",
+                "deductible"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "network",
+                "formulary",
+                "deductible"
+              ]
+            },
+            "semantic_score": 0,
+            "hybrid_score": 2.366419311614764,
+            "reranked_score": 1.2565677246459057,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.3,
+            "policy_specificity": 1.0,
+            "final_rank": 7
+          }
+        ]
+      }
+    },
+    "search_metadata": {
+      "top_k": 3,
+      "alpha": 0.7,
+      "rerank_weights": {
+        "original_score": 0.4,
+        "query_coverage": 0.3,
+        "financial_relevance": 0.2,
+        "policy_specificity": 0.1
+      }
+    }
+  },
+  "emergency room coverage comparison": {
+    "query": "emergency room coverage comparison",
+    "method": "hybrid_search_with_rerank",
+    "total_results": 9,
+    "policies": {
+      "0": {
+        "policy_name": "policy1.pdf",
+        "results": [
+          {
+            "rank": 10,
+            "chunk_id": 7,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "$0 Tubal ligation $0 Vasectomy $0 Medical nutrition therapy, not related to diabetes $0 Pregnancy and maternity care Physician office visits: prenatal and initial postnatal $0 Abortion and abortion-related services $0 3 Benefits5 Your payment When using a Participating Provider3 CYD2 applies Emergency Services Emergency room services $250visit If admitted to the Hospital, this payment for emergency room services does not apply.",
+            "embedding_text": "$0 Tubal ligation $0 Vasectomy $0 Medical nutrition therapy, not related to diabetes $0 Pregnancy and maternity care Physician office visits: prenatal and initial postnatal $0 Abortion and abortion-related services $0 3 Benefits5 Your payment When using a Participating Provider3 CYD2 applies Emergency Services Emergency room services $250visit If admitted to the Hospital, this payment for emergency room services does not apply. Keywords: provider, $0, emergency, benefit, $250 Costs: $0, $250",
+            "semantic_score": 0.3426273465156555,
+            "metadata": {
+              "char_count": 432,
+              "word_count": 62,
+              "key_terms": [
+                "provider",
+                "$0",
+                "emergency",
+                "benefit",
+                "$250"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$0",
+                  "$250"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "$0",
+                "emergency",
+                "benefit",
+                "$250"
+              ]
+            },
+            "hybrid_score": 2.9169628422028215,
+            "keyword_score": 8.923745665472874,
+            "reranked_score": 1.5167851368811287,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 1
+          },
+          {
+            "rank": 1,
+            "chunk_id": 8,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "Instead, you pay the Participating Provider payment under Inpatient facility services Hospital services and stay. Emergency room Physician services $0 Urgent care center services $30visit Ambulance services $150transport This payment is for emergency or authorized transport.",
+            "embedding_text": "Instead, you pay the Participating Provider payment under Inpatient facility services Hospital services and stay. Emergency room Physician services $0 Urgent care center services $30visit Ambulance services $150transport This payment is for emergency or authorized transport. Keywords: provider, $150, $30, $0, emergency, facility, urgent Costs: $150, $0, $30",
+            "semantic_score": 0.5041090250015259,
+            "metadata": {
+              "char_count": 276,
+              "word_count": 36,
+              "key_terms": [
+                "provider",
+                "$150",
+                "$30",
+                "$0",
+                "emergency",
+                "facility",
+                "urgent"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$150",
+                  "$0",
+                  "$30"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "$150",
+                "$30",
+                "$0",
+                "emergency",
+                "facility",
+                "urgent"
+              ]
+            },
+            "hybrid_score": 2.822014058492816,
+            "keyword_score": 8.230459136639158,
+            "reranked_score": 1.4788056233971265,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 2
+          },
+          {
+            "rank": 11,
+            "chunk_id": 45,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "11 Notes This plan is compliant with requirements of the pediatric dental EHB benchmark plan, including coverage of services in circumstances of Medical Necessity as defined in the Early Periodic Screening, Diagnosis and Treatment (EPSDT) benefit. 10 Pediatric Vision Coverage: Pediatric vision Benefits are provided through Blue Shields Vision Plan Administrator (VPA). Coverage for frames.",
+            "embedding_text": "11 Notes This plan is compliant with requirements of the pediatric dental EHB benchmark plan, including coverage of services in circumstances of Medical Necessity as defined in the Early Periodic Screening, Diagnosis and Treatment (EPSDT) benefit. 10 Pediatric Vision Coverage: Pediatric vision Benefits are provided through Blue Shields Vision Plan Administrator (VPA). Coverage for frames. Keywords: benefit, coverage",
+            "semantic_score": 0.33984196186065674,
+            "metadata": {
+              "char_count": 392,
+              "word_count": 55,
+              "key_terms": [
+                "benefit",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "benefit",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 0.9051366536999462,
+            "keyword_score": 2.2241576013249547,
+            "reranked_score": 0.6370546614799785,
+            "query_coverage": 0.25,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 7
+          }
+        ]
+      },
+      "1": {
+        "policy_name": "policy2.pdf",
+        "results": [
+          {
+            "rank": 4,
+            "chunk_id": 68,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Preauthorization may also be required. For Outpatient Infusion Therapy, see your benefit booklet (Outpatient Facility Services) for details. Physiciansurgeon fees 50% coinsurance Not Covered If you need immediate medical attention Emergency room care 50% coinsurance 50% coinsurance None Emergency medical transportation 50% coinsurance 50% coinsurance Preauthorization may be required for non-emergency transportation; see your benefit booklet (Ambulance Services) for details.",
+            "embedding_text": "Preauthorization may also be required. For Outpatient Infusion Therapy, see your benefit booklet (Outpatient Facility Services) for details. Physiciansurgeon fees 50% coinsurance Not Covered If you need immediate medical attention Emergency room care 50% coinsurance 50% coinsurance None Emergency medical transportation 50% coinsurance 50% coinsurance Preauthorization may be required for non-emergency transportation; see your benefit booklet (Ambulance Services) for details. Keywords: coinsurance, emergency, preauthorization, facility, benefit, 50%",
+            "semantic_score": 0.3857293128967285,
+            "metadata": {
+              "char_count": 479,
+              "word_count": 60,
+              "key_terms": [
+                "coinsurance",
+                "emergency",
+                "preauthorization",
+                "facility",
+                "benefit",
+                "50%"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [
+                  "50%"
+                ],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "coinsurance",
+                "emergency",
+                "preauthorization",
+                "facility",
+                "benefit",
+                "50%"
+              ]
+            },
+            "hybrid_score": 2.6325369483138203,
+            "keyword_score": 7.875088097620367,
+            "reranked_score": 1.4030147793255283,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 3
+          },
+          {
+            "rank": 9,
+            "chunk_id": 88,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Peg is Having a Baby (9 months of in-network pre-natal care and a hospital delivery) Managing Joes Type 2 Diabetes (a year of routine in-network care of a well- controlled condition) Mias Simple Fracture (in-network emergency room visit and follow up care) The plans overall deductible $7,500 The plans overall deductible $7,500 The plans overall deductible $7,500 Specialist copayment $100 Specialist copayment $100 Specialist copayment $100 Hospital (facility) coinsurance 50% Hospital (facility) coinsurance 50% Hospital (facility) coinsurance 50% Other coinsurance 50% Other coinsurance 50% Other coinsurance 50% This EXAMPLE event includes services like: Specialist office visits (prenatal care) ChildbirthDelivery Professional Services ChildbirthDelivery Facility Services Diagnostic tests (ultrasounds and blood work) Specialist visit (anesthesia) This EXAMPLE event includes services like: Primary care physician office visits (including disease education) Diagnostic tests (blood work) Prescription drugs Durable medical equipment (glucose meter) This EXAMPLE event includes services like: Emergency room care (including medical supplies) Diagnostic test (x-ray) Durable medical equipment (crutches) Rehabilitation services (physical therapy) Total Example Cost $12,700 Total Example Cost $5,600 Total Example Cost $2,800 In this example, Peg would pay: In this example, Joe would pay: In this example, Mia would pay: Cost Sharing Cost Sharing Cost Sharing Deductibles $7,500 Deductibles $900 Deductibles $2,100 Copayments $0 Copayments $1,000 Copayments $500 Coinsurance $1,700 Coinsurance $0 Coinsurance $0 What isnt covered What isnt covered What isnt covered Limits or exclusions $60 Limits or exclusions $20 Limits or exclusions $0 The total Peg would pay is $9,260 The total Joe would pay is $1,920 The total Mia would pay is $2,600 The plan would be responsible for the other costs of these EXAMPLE covered services.",
+            "embedding_text": "Peg is Having a Baby (9 months of in-network pre-natal care and a hospital delivery) Managing Joes Type 2 Diabetes (a year of routine in-network care of a well- controlled condition) Mias Simple Fracture (in-network emergency room visit and follow up care) The plans overall deductible $7,500 The plans overall deductible $7,500 The plans overall deductible $7,500 Specialist copayment $100 Specialist copayment $100 Specialist copayment $100 Hospital (facility) coinsurance 50% Hospital (facility) coinsurance 50% Hospital (facility) coinsurance 50% Other coinsurance 50% Other coinsurance 50% Other coinsurance 50% This EXAMPLE event includes services like: Specialist office visits (prenatal care) ChildbirthDelivery Professional Services ChildbirthDelivery Facility Services Diagnostic tests (ultrasounds and blood work) Specialist visit (anesthesia) This EXAMPLE event includes services like: Primary care physician office visits (including disease education) Diagnostic tests (blood work) Prescription drugs Durable medical equipment (glucose meter) This EXAMPLE event includes services like: Emergency room care (including medical supplies) Diagnostic test (x-ray) Durable medical equipment (crutches) Rehabilitation services (physical therapy) Total Example Cost $12,700 Total Example Cost $5,600 Total Example Cost $2,800 In this example, Peg would pay: In this example, Joe would pay: In this example, Mia would pay: Cost Sharing Cost Sharing Cost Sharing Deductibles $7,500 Deductibles $900 Deductibles $2,100 Copayments $0 Copayments $1,000 Copayments $500 Coinsurance $1,700 Coinsurance $0 Coinsurance $0 What isnt covered What isnt covered What isnt covered Limits or exclusions $60 Limits or exclusions $20 Limits or exclusions $0 The total Peg would pay is $9,260 The total Joe would pay is $1,920 The total Mia would pay is $2,600 The plan would be responsible for the other costs of these EXAMPLE covered services. Keywords: emergency, $500, facility, $12, $100, $900, prescription, exclusion, copay, network, coinsurance, primary care, $60, deductible, $2, specialist, $1, $9, $20, $0, $7, $5, 50% Costs: $100, $1, $9, $20, $0, $7, $900, $500, $60, $12, $5, $2",
+            "semantic_score": 0.34319770336151123,
+            "metadata": {
+              "char_count": 1933,
+              "word_count": 271,
+              "key_terms": [
+                "emergency",
+                "$500",
+                "facility",
+                "$12",
+                "$100",
+                "$900",
+                "prescription",
+                "exclusion",
+                "copay",
+                "network",
+                "coinsurance",
+                "primary care",
+                "$60",
+                "deductible",
+                "$2",
+                "specialist",
+                "$1",
+                "$9",
+                "$20",
+                "$0",
+                "$7",
+                "$5",
+                "50%"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$100",
+                  "$1",
+                  "$9",
+                  "$20",
+                  "$0",
+                  "$7",
+                  "$900",
+                  "$500",
+                  "$60",
+                  "$12",
+                  "$5",
+                  "$2"
+                ],
+                "percentages": [
+                  "50%"
+                ],
+                "deductibles": [
+                  "$900",
+                  "$7",
+                  "$500"
+                ],
+                "copays": [
+                  "$100",
+                  "$0",
+                  "$000"
+                ]
+              },
+              "search_keywords": [
+                "emergency",
+                "$500",
+                "facility",
+                "$12",
+                "$100",
+                "$900",
+                "prescription",
+                "exclusion",
+                "copay",
+                "network",
+                "coinsurance",
+                "primary care",
+                "$60",
+                "deductible",
+                "$2",
+                "specialist",
+                "$1",
+                "$9",
+                "$20",
+                "$0",
+                "$7",
+                "$5",
+                "50%"
+              ]
+            },
+            "hybrid_score": 1.5232776879742658,
+            "keyword_score": 4.276797652070693,
+            "reranked_score": 0.9593110751897064,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 4
+          },
+          {
+            "rank": 2,
+            "chunk_id": 69,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Urgent care $75visit; deductible does not apply Not Covered None If you have a hospital stay Facility fee (e.g., hospital room) 50% coinsurance Not Covered Referral required. Preauthorization may also be required; see your benefit booklet (Inpatient Hospital Services) for details.",
+            "embedding_text": "Urgent care $75visit; deductible does not apply Not Covered None If you have a hospital stay Facility fee (e.g., hospital room) 50% coinsurance Not Covered Referral required. Preauthorization may also be required; see your benefit booklet (Inpatient Hospital Services) for details. Keywords: coinsurance, preauthorization, facility, deductible, benefit, 50%, urgent, $75 Costs: $75",
+            "semantic_score": 0.3936240077018738,
+            "metadata": {
+              "char_count": 282,
+              "word_count": 41,
+              "key_terms": [
+                "coinsurance",
+                "preauthorization",
+                "facility",
+                "deductible",
+                "benefit",
+                "50%",
+                "urgent",
+                "$75"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$75"
+                ],
+                "percentages": [
+                  "50%"
+                ],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "coinsurance",
+                "preauthorization",
+                "facility",
+                "deductible",
+                "benefit",
+                "50%",
+                "urgent",
+                "$75"
+              ]
+            },
+            "hybrid_score": 1.2119595101301883,
+            "keyword_score": 3.1214090157962553,
+            "reranked_score": 0.7597838040520752,
+            "query_coverage": 0.25,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 5
+          }
+        ]
+      }
+    },
+    "search_metadata": {
+      "top_k": 3,
+      "alpha": 0.7,
+      "rerank_weights": {
+        "original_score": 0.4,
+        "query_coverage": 0.3,
+        "financial_relevance": 0.2,
+        "policy_specificity": 0.1
+      }
+    }
+  },
+  "prescription drug costs": {
+    "query": "prescription drug costs",
+    "method": "hybrid_search_with_rerank",
+    "total_results": 9,
+    "policies": {
+      "1": {
+        "policy_name": "policy2.pdf",
+        "results": [
+          {
+            "rank": 3,
+            "chunk_id": 66,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Cost sharing for insulin included in the drug list will not exceed $25 per prescription for a 30-day supply, regardless of the amount or type of insulin needed to fill the prescription.",
+            "embedding_text": "Cost sharing for insulin included in the drug list will not exceed $25 per prescription for a 30-day supply, regardless of the amount or type of insulin needed to fill the prescription. Keywords: prescription, $25 Costs: $25",
+            "semantic_score": 0.6540201902389526,
+            "metadata": {
+              "char_count": 186,
+              "word_count": 32,
+              "key_terms": [
+                "prescription",
+                "$25"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$25"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "prescription",
+                "$25"
+              ]
+            },
+            "hybrid_score": 2.1791866956947894,
+            "keyword_score": 5.737908541758408,
+            "reranked_score": 1.371674678277916,
+            "query_coverage": 0.6666666666666666,
+            "financial_relevance": 1.0,
+            "policy_specificity": 1.0,
+            "final_rank": 1
+          },
+          {
+            "rank": 7,
+            "chunk_id": 64,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) If you need drugs to treat your illness or condition More information about prescription drug coverage is available at www.bcbstx.comrx25 4T Generic drugs Retail: Preferred Participating - $25prescription Participating - $25prescription Mail - $75prescription; deductible does not apply Not Covered Limited to a 30-day supply at retail (or a 90-day supply at a network of select retail pharmacies).",
+            "embedding_text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) If you need drugs to treat your illness or condition More information about prescription drug coverage is available at www.bcbstx.comrx25 4T Generic drugs Retail: Preferred Participating - $25prescription Participating - $25prescription Mail - $75prescription; deductible does not apply Not Covered Limited to a 30-day supply at retail (or a 90-day supply at a network of select retail pharmacies). Keywords: provider, network, $25, generic, limitation, deductible, prescription, $75, coverage Costs: $25, $75",
+            "semantic_score": 0.574898362159729,
+            "metadata": {
+              "char_count": 757,
+              "word_count": 105,
+              "key_terms": [
+                "provider",
+                "network",
+                "$25",
+                "generic",
+                "limitation",
+                "deductible",
+                "prescription",
+                "$75",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$25",
+                  "$75"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "network",
+                "$25",
+                "generic",
+                "limitation",
+                "deductible",
+                "prescription",
+                "$75",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 1.4499687454884638,
+            "keyword_score": 3.491799639922178,
+            "reranked_score": 1.0799874981953856,
+            "query_coverage": 0.6666666666666666,
+            "financial_relevance": 1.0,
+            "policy_specificity": 1.0,
+            "final_rank": 6
+          }
+        ]
+      },
+      "0": {
+        "policy_name": "policy1.pdf",
+        "results": [
+          {
+            "rank": 8,
+            "chunk_id": 20,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "When using a MHSA Participating Provider3 CYD2 applies Hospital services $500day up to 4 daysadmission Residential Care $500day up to 4 daysadmission Prescription Drug Benefits7,8 Your payment When using a Participating Pharmacy3 CYD2 applies Level A Level B Retail pharmacy prescription Drugs Per prescription, up to a 30-day supply.",
+            "embedding_text": "When using a MHSA Participating Provider3 CYD2 applies Hospital services $500day up to 4 daysadmission Residential Care $500day up to 4 daysadmission Prescription Drug Benefits7,8 Your payment When using a Participating Pharmacy3 CYD2 applies Level A Level B Retail pharmacy prescription Drugs Per prescription, up to a 30-day supply. Keywords: benefit, $500, provider, prescription Costs: $500",
+            "semantic_score": 0.5467661619186401,
+            "metadata": {
+              "char_count": 335,
+              "word_count": 49,
+              "key_terms": [
+                "benefit",
+                "$500",
+                "provider",
+                "prescription"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$500"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "benefit",
+                "$500",
+                "provider",
+                "prescription"
+              ]
+            },
+            "hybrid_score": 2.000033198843333,
+            "keyword_score": 5.390989618334283,
+            "reranked_score": 1.3000132795373334,
+            "query_coverage": 0.6666666666666666,
+            "financial_relevance": 1.0,
+            "policy_specificity": 1.0,
+            "final_rank": 2
+          },
+          {
+            "rank": 11,
+            "chunk_id": 38,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "7 Outpatient Prescription Drug Coverage: Medicare Part D-creditable coverage- This Plans prescription drug coverage is on average equivalent to or better than the standard benefit set by the federal government for Medicare Part D (also called creditable coverage).",
+            "embedding_text": "7 Outpatient Prescription Drug Coverage: Medicare Part D-creditable coverage- This Plans prescription drug coverage is on average equivalent to or better than the standard benefit set by the federal government for Medicare Part D (also called creditable coverage). Keywords: benefit, prescription, coverage",
+            "semantic_score": 0.4793766140937805,
+            "metadata": {
+              "char_count": 265,
+              "word_count": 38,
+              "key_terms": [
+                "benefit",
+                "prescription",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "benefit",
+                "prescription",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 2.265547683850307,
+            "keyword_score": 6.433280179948867,
+            "reranked_score": 1.2662190735401229,
+            "query_coverage": 0.6666666666666666,
+            "financial_relevance": 0.3,
+            "policy_specificity": 1.0,
+            "final_rank": 3
+          },
+          {
+            "rank": 16,
+            "chunk_id": 39,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "Because this plans prescription drug coverage is creditable, you do not have to enroll in Medicare Part D while you maintain this coverage; however, you should be aware that if you do not enroll in Medicare Part D within 63 days following termination of this coverage, you could be subject to Medicare Part D premium penalties. 8 Outpatient Prescription Drug Coverage: Brand Drug coverage when a Generic or Biosimilar Drug is available.",
+            "embedding_text": "Because this plans prescription drug coverage is creditable, you do not have to enroll in Medicare Part D while you maintain this coverage; however, you should be aware that if you do not enroll in Medicare Part D within 63 days following termination of this coverage, you could be subject to Medicare Part D premium penalties. 8 Outpatient Prescription Drug Coverage: Brand Drug coverage when a Generic or Biosimilar Drug is available. Keywords: generic, brand, prescription, premium, coverage",
+            "semantic_score": 0.45231735706329346,
+            "metadata": {
+              "char_count": 437,
+              "word_count": 72,
+              "key_terms": [
+                "generic",
+                "brand",
+                "prescription",
+                "premium",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "generic",
+                "brand",
+                "prescription",
+                "premium",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 2.226696075667637,
+            "keyword_score": 6.366913085744438,
+            "reranked_score": 1.250678430267055,
+            "query_coverage": 0.6666666666666666,
+            "financial_relevance": 0.3,
+            "policy_specificity": 1.0,
+            "final_rank": 4
+          }
+        ]
+      }
+    },
+    "search_metadata": {
+      "top_k": 3,
+      "alpha": 0.7,
+      "rerank_weights": {
+        "original_score": 0.4,
+        "query_coverage": 0.3,
+        "financial_relevance": 0.2,
+        "policy_specificity": 0.1
+      }
+    }
+  },
+  "out of pocket maximum": {
+    "query": "out of pocket maximum",
+    "method": "hybrid_search_with_rerank",
+    "total_results": 9,
+    "policies": {
+      "0": {
+        "policy_name": "policy1.pdf",
+        "results": [
+          {
+            "rank": 1,
+            "chunk_id": 34,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "These services are not administered by Blue Shields Mental Health Service Administrator (MHSA). 4 Calendar Year Out-of-Pocket Maximum (OOPM): Calendar Year Out-of-Pocket Maximum explained. The Out-of-Pocket Maximum is the most you are required to pay for Covered Services in a Calendar Year. Once you reach your Out-of-Pocket Maximum, Blue Shield will pay 100% of the Allowed Charges for Covered Services for the rest of the Calendar Year. Your payment after you reach the Calendar Year OOPM.",
+            "embedding_text": "These services are not administered by Blue Shields Mental Health Service Administrator (MHSA). 4 Calendar Year Out-of-Pocket Maximum (OOPM): Calendar Year Out-of-Pocket Maximum explained. The Out-of-Pocket Maximum is the most you are required to pay for Covered Services in a Calendar Year. Once you reach your Out-of-Pocket Maximum, Blue Shield will pay 100% of the Allowed Charges for Covered Services for the rest of the Calendar Year. Your payment after you reach the Calendar Year OOPM. Keywords: 100%, out-of-pocket",
+            "semantic_score": 0.45541471242904663,
+            "metadata": {
+              "char_count": 493,
+              "word_count": 76,
+              "key_terms": [
+                "100%",
+                "out-of-pocket"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [
+                  "100%"
+                ],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "100%",
+                "out-of-pocket"
+              ]
+            },
+            "hybrid_score": 4.876250827817998,
+            "keyword_score": 15.19153509705888,
+            "reranked_score": 2.3005003311271994,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 1
+          },
+          {
+            "rank": 4,
+            "chunk_id": 3,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "When using a Participating Provider3 Calendar Year medical Deductible Individual coverage $0 Family coverage $0: individual $0: Family Calendar Year pharmacy Deductible Individual coverage Family coverage $0 $0: individual $0: Family Calendar Year Out-of-Pocket Maximum4 An Out-of-Pocket Maximum is the most a Member will pay for Covered Services each Calendar Year. Any exceptions are listed in the EOC.",
+            "embedding_text": "When using a Participating Provider3 Calendar Year medical Deductible Individual coverage $0 Family coverage $0: individual $0: Family Calendar Year pharmacy Deductible Individual coverage Family coverage $0 $0: individual $0: Family Calendar Year Out-of-Pocket Maximum4 An Out-of-Pocket Maximum is the most a Member will pay for Covered Services each Calendar Year. Any exceptions are listed in the EOC. Keywords: provider, $0, out-of-pocket, deductible, coverage Costs: $0",
+            "semantic_score": 0.37037062644958496,
+            "metadata": {
+              "char_count": 405,
+              "word_count": 58,
+              "key_terms": [
+                "provider",
+                "$0",
+                "out-of-pocket",
+                "deductible",
+                "coverage"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$0"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "$0",
+                "out-of-pocket",
+                "deductible",
+                "coverage"
+              ]
+            },
+            "hybrid_score": 3.928878194357868,
+            "keyword_score": 12.232062519477193,
+            "reranked_score": 1.9215512777431474,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 2
+          },
+          {
+            "rank": 18,
+            "chunk_id": 40,
+            "policy_id": 0,
+            "policy_name": "policy1.pdf",
+            "text": "If you, the Physician, or Health Care Provider, select a Brand Drug when a Generic Drug equivalent or Biosimilar Drug is available, you are responsible for the difference between the cost to Blue Shield for the Brand Drug and its Generic Drug equivalent or Biosimilar Drug plus the applicable tier Copayment or Coinsurance of the Brand Drug. This difference in cost will not count towards any Calendar Year pharmacy Deductible, medical Deductible, or the Calendar Year Out-of-Pocket Maximum.",
+            "embedding_text": "If you, the Physician, or Health Care Provider, select a Brand Drug when a Generic Drug equivalent or Biosimilar Drug is available, you are responsible for the difference between the cost to Blue Shield for the Brand Drug and its Generic Drug equivalent or Biosimilar Drug plus the applicable tier Copayment or Coinsurance of the Brand Drug. This difference in cost will not count towards any Calendar Year pharmacy Deductible, medical Deductible, or the Calendar Year Out-of-Pocket Maximum. Keywords: provider, coinsurance, out-of-pocket, generic, brand, deductible, copay",
+            "semantic_score": 0.1535828709602356,
+            "metadata": {
+              "char_count": 492,
+              "word_count": 78,
+              "key_terms": [
+                "provider",
+                "coinsurance",
+                "out-of-pocket",
+                "generic",
+                "brand",
+                "deductible",
+                "copay"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "coinsurance",
+                "out-of-pocket",
+                "generic",
+                "brand",
+                "deductible",
+                "copay"
+              ]
+            },
+            "hybrid_score": 3.16128556455617,
+            "keyword_score": 10.179258516280015,
+            "reranked_score": 1.6145142258224683,
+            "query_coverage": 0.5,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 4
+          }
+        ]
+      },
+      "1": {
+        "policy_name": "policy2.pdf",
+        "results": [
+          {
+            "rank": 2,
+            "chunk_id": 57,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "What is the out-of-pocket limit for this plan? $9,200 Individual$18,400 Family The out-of-pocket limit is the most you could pay in a year for covered services. If you have other family members in this plan, they have to meet their own out-of-pocket limits until the overall family out-of-pocket limit has been met. What is not included in the out-of-pocket limit? Premiums, balance-billing charges, and health care this plan doesnt cover.",
+            "embedding_text": "What is the out-of-pocket limit for this plan? $9,200 Individual$18,400 Family The out-of-pocket limit is the most you could pay in a year for covered services. If you have other family members in this plan, they have to meet their own out-of-pocket limits until the overall family out-of-pocket limit has been met. What is not included in the out-of-pocket limit? Premiums, balance-billing charges, and health care this plan doesnt cover. Keywords: $9, premium, $18, out-of-pocket Costs: $9, $18",
+            "semantic_score": 0.43328702449798584,
+            "metadata": {
+              "char_count": 440,
+              "word_count": 70,
+              "key_terms": [
+                "$9",
+                "premium",
+                "$18",
+                "out-of-pocket"
+              ],
+              "financial_info": {
+                "dollar_amounts": [
+                  "$9",
+                  "$18"
+                ],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "$9",
+                "premium",
+                "$18",
+                "out-of-pocket"
+              ]
+            },
+            "hybrid_score": 3.6803443020499733,
+            "keyword_score": 11.256811283004609,
+            "reranked_score": 1.6721377208199897,
+            "query_coverage": 0.0,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 3
+          },
+          {
+            "rank": 3,
+            "chunk_id": 58,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "Even though you pay these expenses, they dont count toward the out-of-pocket limit. Will you pay less if you use a network provider? Yes. See www.bcbstx.comgombh or call 1-888-697-0683 for a list of Participating providers. This plan uses a provider network. You will pay less if you use a provider in the plans network.",
+            "embedding_text": "Even though you pay these expenses, they dont count toward the out-of-pocket limit. Will you pay less if you use a network provider? Yes. See www.bcbstx.comgombh or call 1-888-697-0683 for a list of Participating providers. This plan uses a provider network. You will pay less if you use a provider in the plans network. Keywords: provider, out-of-pocket, network",
+            "semantic_score": 0.3918958902359009,
+            "metadata": {
+              "char_count": 321,
+              "word_count": 54,
+              "key_terms": [
+                "provider",
+                "out-of-pocket",
+                "network"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "out-of-pocket",
+                "network"
+              ]
+            },
+            "hybrid_score": 2.917428242975499,
+            "keyword_score": 8.81033706603456,
+            "reranked_score": 1.3669712971901997,
+            "query_coverage": 0.0,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 5
+          },
+          {
+            "rank": 6,
+            "chunk_id": 59,
+            "policy_id": 1,
+            "policy_name": "policy2.pdf",
+            "text": "You will pay the most if you use an out-of-network provider, and you might receive a bill from a provider for the difference between the providers charge and what your plan pays (balance billing). Be aware, your network provider might use an out-of- network provider for some services (such as lab work). Check with your provider before you get services. Do you need a referral to see a specialist? Yes.",
+            "embedding_text": "You will pay the most if you use an out-of-network provider, and you might receive a bill from a provider for the difference between the providers charge and what your plan pays (balance billing). Be aware, your network provider might use an out-of- network provider for some services (such as lab work). Check with your provider before you get services. Do you need a referral to see a specialist? Yes. Keywords: provider, network, specialist",
+            "keyword_score": 4.390984214884991,
+            "metadata": {
+              "char_count": 404,
+              "word_count": 70,
+              "key_terms": [
+                "provider",
+                "network",
+                "specialist"
+              ],
+              "financial_info": {
+                "dollar_amounts": [],
+                "percentages": [],
+                "deductibles": [],
+                "copays": []
+              },
+              "search_keywords": [
+                "provider",
+                "network",
+                "specialist"
+              ]
+            },
+            "semantic_score": 0,
+            "hybrid_score": 1.3172952644654976,
+            "reranked_score": 0.726918105786199,
+            "query_coverage": 0.0,
+            "financial_relevance": 0.5,
+            "policy_specificity": 1.0,
+            "final_rank": 8
+          }
+        ]
+      }
+    },
+    "search_metadata": {
+      "top_k": 3,
+      "alpha": 0.7,
+      "rerank_weights": {
+        "original_score": 0.4,
+        "query_coverage": 0.3,
+        "financial_relevance": 0.2,
+        "policy_specificity": 0.1
+      }
+    }
+  }
+}

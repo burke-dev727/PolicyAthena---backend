@@ -1,0 +1,19 @@
+sentence-transformers>=2.2.0
+scikit-learn>=1.0.0
+numpy>=1.21.0
+pandas>=1.3.0
+nltk>=3.6
+jupyter>=1.0.0
+ipykernel>=7.0.0
+rank-bm25>=0.2.2
+
+# Optional: FAISS for faster vector search
+# If installed, will use FAISS; otherwise falls back to sklearn
+# Note: FAISS requires compilation and may not work on all systems
+# faiss-cpu>=1.7.0  # Uncomment if you can get it installed
+
+# Additional dependencies (automatically installed by above packages)
+# torch - for sentence-transformers
+# scipy - for scientific computing
+# transformers - for sentence-transformers
+# All other dependencies are handled automatically

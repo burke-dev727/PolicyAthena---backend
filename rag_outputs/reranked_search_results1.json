@@ -1,0 +1,439 @@
+{
+  "query": "which policy has cheaper copay",
+  "method": "hybrid_search_with_rerank",
+  "total_results": 15,
+  "policies": {
+    "1": {
+      "policy_name": "policy2.pdf",
+      "results": [
+        {
+          "rank": 11,
+          "chunk_id": 60,
+          "policy_id": 1,
+          "policy_name": "policy2.pdf",
+          "text": "Do you need a referral to see a specialist? Yes. This plan will pay some or all of the costs to see a specialist for covered services but only if you have a referral before you see the specialist. For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 All copayment and coinsurance costs shown in this chart are after your deductible has been met, if a deductible applies.",
+          "embedding_text": "Do you need a referral to see a specialist? Yes. This plan will pay some or all of the costs to see a specialist for covered services but only if you have a referral before you see the specialist. For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 All copayment and coinsurance costs shown in this chart are after your deductible has been met, if a deductible applies. Keywords: specialist, coinsurance, limitation, deductible, copay",
+          "semantic_score": 0.4478278160095215,
+          "metadata": {
+            "char_count": 461,
+            "word_count": 76,
+            "key_terms": [
+              "specialist",
+              "coinsurance",
+              "limitation",
+              "deductible",
+              "copay"
+            ],
+            "financial_info": {
+              "dollar_amounts": [],
+              "percentages": [],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "specialist",
+              "coinsurance",
+              "limitation",
+              "deductible",
+              "copay"
+            ]
+          },
+          "hybrid_score": 2.2818506020653158,
+          "keyword_score": 6.561237102862169,
+          "reranked_score": 1.1727402408261265,
+          "query_coverage": 0.3333333333333333,
+          "financial_relevance": 0.3,
+          "policy_specificity": 1.0,
+          "final_rank": 1
+        },
+        {
+          "rank": 23,
+          "chunk_id": 57,
+          "policy_id": 1,
+          "policy_name": "policy2.pdf",
+          "text": "What is the out-of-pocket limit for this plan? $9,200 Individual$18,400 Family The out-of-pocket limit is the most you could pay in a year for covered services. If you have other family members in this plan, they have to meet their own out-of-pocket limits until the overall family out-of-pocket limit has been met. What is not included in the out-of-pocket limit? Premiums, balance-billing charges, and health care this plan doesnt cover.",
+          "embedding_text": "What is the out-of-pocket limit for this plan? $9,200 Individual$18,400 Family The out-of-pocket limit is the most you could pay in a year for covered services. If you have other family members in this plan, they have to meet their own out-of-pocket limits until the overall family out-of-pocket limit has been met. What is not included in the out-of-pocket limit? Premiums, balance-billing charges, and health care this plan doesnt cover. Keywords: $9, premium, $18, out-of-pocket Costs: $9, $18",
+          "semantic_score": 0.39864879846572876,
+          "metadata": {
+            "char_count": 440,
+            "word_count": 70,
+            "key_terms": [
+              "$9",
+              "premium",
+              "$18",
+              "out-of-pocket"
+            ],
+            "financial_info": {
+              "dollar_amounts": [
+                "$9",
+                "$18"
+              ],
+              "percentages": [],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "$9",
+              "premium",
+              "$18",
+              "out-of-pocket"
+            ]
+          },
+          "hybrid_score": 1.005214815144373,
+          "keyword_score": 2.4205355207278756,
+          "reranked_score": 0.7020859260577491,
+          "query_coverage": 0.0,
+          "financial_relevance": 1.0,
+          "policy_specificity": 1.0,
+          "final_rank": 5
+        },
+        {
+          "rank": 3,
+          "chunk_id": 79,
+          "policy_id": 1,
+          "policy_name": "policy2.pdf",
+          "text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) Childrens dental check-up Not Covered Not Covered None of 8 Excluded Services Other Covered Services: Services Your Plan Generally Does NOT Cover (Check your policy or plan document for more information and a list of any other excluded services.)",
+          "embedding_text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) Childrens dental check-up Not Covered Not Covered None of 8 Excluded Services Other Covered Services: Services Your Plan Generally Does NOT Cover (Check your policy or plan document for more information and a list of any other excluded services.) Keywords: provider, limitation",
+          "keyword_score": 3.5783512479783273,
+          "metadata": {
+            "char_count": 605,
+            "word_count": 86,
+            "key_terms": [
+              "provider",
+              "limitation"
+            ],
+            "financial_info": {
+              "dollar_amounts": [],
+              "percentages": [],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "provider",
+              "limitation"
+            ]
+          },
+          "semantic_score": 0,
+          "hybrid_score": 1.0735053743934984,
+          "reranked_score": 0.6894021497573993,
+          "query_coverage": 0.3333333333333333,
+          "financial_relevance": 0.3,
+          "policy_specificity": 1.0,
+          "final_rank": 6
+        },
+        {
+          "rank": 5,
+          "chunk_id": 70,
+          "policy_id": 1,
+          "policy_name": "policy2.pdf",
+          "text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) Physiciansurgeon fees 50% coinsurance Not Covered Referral required.",
+          "embedding_text": "For more information about limitations and exceptions, see the plan or policy document at www.bcbstx.combbindbb_bhsd42bftitxp_tx_2025.pdf of 8 Common Medical Event Services You May Need What You Will Pay Limitations, Exceptions, Other Important Information Participating Providers (You will pay the least) Non-Participating Providers (You will pay the most) Physiciansurgeon fees 50% coinsurance Not Covered Referral required. Keywords: coinsurance, 50%, provider, limitation",
+          "keyword_score": 2.896402103958899,
+          "metadata": {
+            "char_count": 427,
+            "word_count": 55,
+            "key_terms": [
+              "coinsurance",
+              "50%",
+              "provider",
+              "limitation"
+            ],
+            "financial_info": {
+              "dollar_amounts": [],
+              "percentages": [
+                "50%"
+              ],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "coinsurance",
+              "50%",
+              "provider",
+              "limitation"
+            ]
+          },
+          "semantic_score": 0,
+          "hybrid_score": 0.8689206311876698,
+          "reranked_score": 0.607568252475068,
+          "query_coverage": 0.3333333333333333,
+          "financial_relevance": 0.3,
+          "policy_specificity": 1.0,
+          "final_rank": 8
+        },
+        {
+          "rank": 1,
+          "chunk_id": 87,
+          "policy_id": 1,
+          "policy_name": "policy2.pdf",
+          "text": "Your actual costs will be different depending on the actual care you receive, the prices your providers charge, and many other factors. Focus on the cost-sharing amounts (deductibles, copayments and coinsurance) and excluded services under the plan. Use this information to compare the portion of costs you might pay under different health plans. Please note these coverage examples are based on self-only coverage.",
+          "embedding_text": "Your actual costs will be different depending on the actual care you receive, the prices your providers charge, and many other factors. Focus on the cost-sharing amounts (deductibles, copayments and coinsurance) and excluded services under the plan. Use this information to compare the portion of costs you might pay under different health plans. Please note these coverage examples are based on self-only coverage. Keywords: provider, coinsurance, deductible, copay, coverage",
+          "semantic_score": 0.5110146999359131,
+          "metadata": {
+            "char_count": 416,
+            "word_count": 63,
+            "key_terms": [
+              "provider",
+              "coinsurance",
+              "deductible",
+              "copay",
+              "coverage"
+            ],
+            "financial_info": {
+              "dollar_amounts": [],
+              "percentages": [],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "provider",
+              "coinsurance",
+              "deductible",
+              "copay",
+              "coverage"
+            ]
+          },
+          "hybrid_score": 0.8371292512305452,
+          "keyword_score": 1.5980632042513532,
+          "reranked_score": 0.49485170049221805,
+          "query_coverage": 0.0,
+          "financial_relevance": 0.3,
+          "policy_specificity": 1.0,
+          "final_rank": 11
+        }
+      ]
+    },
+    "0": {
+      "policy_name": "policy1.pdf",
+      "results": [
+        {
+          "rank": 4,
+          "chunk_id": 32,
+          "policy_id": 0,
+          "policy_name": "policy1.pdf",
+          "text": "If this Plan has any Calendar Year Deductible(s), Covered Services subject to that Deductible are identified with a check mark () in the Benefits chart above. 3 Using Participating Providers: Participating Providers have a contract to provide health care services to Members. When you receive Covered Services from a Participating Provider, you are only responsible for the Copayment or Coinsurance, once any Calendar Year Deductible has been met. Participating Pharmacies.",
+          "embedding_text": "If this Plan has any Calendar Year Deductible(s), Covered Services subject to that Deductible are identified with a check mark () in the Benefits chart above. 3 Using Participating Providers: Participating Providers have a contract to provide health care services to Members. When you receive Covered Services from a Participating Provider, you are only responsible for the Copayment or Coinsurance, once any Calendar Year Deductible has been met. Participating Pharmacies. Keywords: provider, coinsurance, deductible, benefit, copay",
+          "semantic_score": 0.4989088773727417,
+          "metadata": {
+            "char_count": 474,
+            "word_count": 70,
+            "key_terms": [
+              "provider",
+              "coinsurance",
+              "deductible",
+              "benefit",
+              "copay"
+            ],
+            "financial_info": {
+              "dollar_amounts": [],
+              "percentages": [],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "provider",
+              "coinsurance",
+              "deductible",
+              "benefit",
+              "copay"
+            ]
+          },
+          "hybrid_score": 1.9719656886770132,
+          "keyword_score": 5.40909824838698,
+          "reranked_score": 0.9487862754708053,
+          "query_coverage": 0.0,
+          "financial_relevance": 0.3,
+          "policy_specificity": 1.0,
+          "final_rank": 2
+        },
+        {
+          "rank": 24,
+          "chunk_id": 23,
+          "policy_id": 0,
+          "policy_name": "policy1.pdf",
+          "text": "Contraceptive Drugs and devices $0 Tier 1 Drugs $10prescription Tier 2 Drugs $50prescription Tier 3 Drugs $60prescription Tier 4 Drugs 20% up to $500prescription 7 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month in which the Member turns 19.",
+          "embedding_text": "Contraceptive Drugs and devices $0 Tier 1 Drugs $10prescription Tier 2 Drugs $50prescription Tier 3 Drugs $60prescription Tier 4 Drugs 20% up to $500prescription 7 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month in which the Member turns 19. Keywords: 20%, $0, $50, $500, $60, prescription, benefit, $10 Costs: $0, $50, $500, $60, $10",
+          "semantic_score": 0.39385318756103516,
+          "metadata": {
+            "char_count": 288,
+            "word_count": 45,
+            "key_terms": [
+              "20%",
+              "$0",
+              "$50",
+              "$500",
+              "$60",
+              "prescription",
+              "benefit",
+              "$10"
+            ],
+            "financial_info": {
+              "dollar_amounts": [
+                "$0",
+                "$50",
+                "$500",
+                "$60",
+                "$10"
+              ],
+              "percentages": [
+                "20%"
+              ],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "20%",
+              "$0",
+              "$50",
+              "$500",
+              "$60",
+              "prescription",
+              "benefit",
+              "$10"
+            ]
+          },
+          "hybrid_score": 1.2370501883211726,
+          "keyword_score": 3.204509856761493,
+          "reranked_score": 0.794820075328469,
+          "query_coverage": 0.0,
+          "financial_relevance": 1.0,
+          "policy_specificity": 1.0,
+          "final_rank": 3
+        },
+        {
+          "rank": 27,
+          "chunk_id": 26,
+          "policy_id": 0,
+          "policy_name": "policy1.pdf",
+          "text": "There is a maximum of two follow up visits. Standard lenses $0 Non-standard lenses All charges above $60 8 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month in which the Member turns 19. When using a Participating Provider3 CYD2 applies Eyewearmaterials One eyeglass frame and eyeglass lenses, or contact lenses instead of eyeglasses, up to the Benefit per Calendar Year. Any exceptions are noted below.",
+          "embedding_text": "There is a maximum of two follow up visits. Standard lenses $0 Non-standard lenses All charges above $60 8 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month in which the Member turns 19. When using a Participating Provider3 CYD2 applies Eyewearmaterials One eyeglass frame and eyeglass lenses, or contact lenses instead of eyeglasses, up to the Benefit per Calendar Year. Any exceptions are noted below. Keywords: benefit, $0, $60, provider Costs: $60, $0",
+          "semantic_score": 0.38185614347457886,
+          "metadata": {
+            "char_count": 448,
+            "word_count": 71,
+            "key_terms": [
+              "benefit",
+              "$0",
+              "$60",
+              "provider"
+            ],
+            "financial_info": {
+              "dollar_amounts": [
+                "$60",
+                "$0"
+              ],
+              "percentages": [],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "benefit",
+              "$0",
+              "$60",
+              "provider"
+            ]
+          },
+          "hybrid_score": 1.1146110906534354,
+          "keyword_score": 2.8243726340707673,
+          "reranked_score": 0.7458444362613742,
+          "query_coverage": 0.0,
+          "financial_relevance": 1.0,
+          "policy_specificity": 1.0,
+          "final_rank": 4
+        },
+        {
+          "rank": 20,
+          "chunk_id": 30,
+          "policy_id": 0,
+          "policy_name": "policy1.pdf",
+          "text": "9 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month in which the Member turns 19. When using a Participating Provider3 CYD2 applies Low vision devices 35% One aid per Calendar Year. Notes 1 Evidence of Coverage (EOC): The Evidence of Coverage (EOC) describes the Benefits, limitations, and exclusions that apply to coverage under this Plan. Please review the EOC for more details of coverage outlined in this Summary of Benefits.",
+          "embedding_text": "9 Pediatric Benefits Your payment Pediatric Benefits are available through the end of the month in which the Member turns 19. When using a Participating Provider3 CYD2 applies Low vision devices 35% One aid per Calendar Year. Notes 1 Evidence of Coverage (EOC): The Evidence of Coverage (EOC) describes the Benefits, limitations, and exclusions that apply to coverage under this Plan. Please review the EOC for more details of coverage outlined in this Summary of Benefits. Keywords: provider, limitation, benefit, exclusion, 35%, coverage",
+          "semantic_score": 0.4091756343841553,
+          "metadata": {
+            "char_count": 474,
+            "word_count": 76,
+            "key_terms": [
+              "provider",
+              "limitation",
+              "benefit",
+              "exclusion",
+              "35%",
+              "coverage"
+            ],
+            "financial_info": {
+              "dollar_amounts": [],
+              "percentages": [
+                "35%"
+              ],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "provider",
+              "limitation",
+              "benefit",
+              "exclusion",
+              "35%",
+              "coverage"
+            ]
+          },
+          "hybrid_score": 1.118921377956502,
+          "keyword_score": 2.77499477962531,
+          "reranked_score": 0.6075685511826008,
+          "query_coverage": 0.0,
+          "financial_relevance": 0.3,
+          "policy_specificity": 1.0,
+          "final_rank": 7
+        },
+        {
+          "rank": 5,
+          "chunk_id": 44,
+          "policy_id": 0,
+          "policy_name": "policy1.pdf",
+          "text": "9 Pediatric Dental Coverage: Pediatric dental Benefits are provided through Blue Shields Dental Plan Administrator (DPA). Orthodontic Covered Services. The Copayment or Coinsurance for Medically Necessary orthodontic Covered Services applies to a course of treatment even if it extends beyond a Calendar Year. This applies as long as the Member remains enrolled in the Plan.",
+          "embedding_text": "9 Pediatric Dental Coverage: Pediatric dental Benefits are provided through Blue Shields Dental Plan Administrator (DPA). Orthodontic Covered Services. The Copayment or Coinsurance for Medically Necessary orthodontic Covered Services applies to a course of treatment even if it extends beyond a Calendar Year. This applies as long as the Member remains enrolled in the Plan. Keywords: coinsurance, coverage, copay, benefit",
+          "semantic_score": 0.49640166759490967,
+          "metadata": {
+            "char_count": 375,
+            "word_count": 55,
+            "key_terms": [
+              "coinsurance",
+              "coverage",
+              "copay",
+              "benefit"
+            ],
+            "financial_info": {
+              "dollar_amounts": [],
+              "percentages": [],
+              "deductibles": [],
+              "copays": []
+            },
+            "search_keywords": [
+              "coinsurance",
+              "coverage",
+              "copay",
+              "benefit"
+            ]
+          },
+          "hybrid_score": 0.8623893358711279,
+          "keyword_score": 1.7163605618489701,
+          "reranked_score": 0.5049557343484512,
+          "query_coverage": 0.0,
+          "financial_relevance": 0.3,
+          "policy_specificity": 1.0,
+          "final_rank": 9
+        }
+      ]
+    }
+  },
+  "search_metadata": {
+    "top_k": 5,
+    "alpha": 0.7,
+    "rerank_weights": {
+      "original_score": 0.4,
+      "query_coverage": 0.3,
+      "financial_relevance": 0.2,
+      "policy_specificity": 0.1
+    }
+  }
+}
